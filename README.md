@@ -8,13 +8,13 @@
 
 
 
-![GitHub contributors](https://img.shields.io/github/contributors/upes-open/OSoC_Lost-And-Found-WebApp)
- *Fork banner *Star banner *Issues banner
+![GitHub contributors](https://img.shields.io/github/contributors/upes-open/OSoC_Lost-And-Found-WebApp) ![GitHub forks](https://img.shields.io/github/forks/upes-open/OSoC_Lost-And-Found-WebApp) ![GitHub Repo stars](https://img.shields.io/github/stars/upes-open/OSoC_Lost-And-Found-WebApp) ![GitHub issues](https://img.shields.io/github/issues/upes-open/OSoC_Lost-And-Found-WebApp)
 
-contributor banner: https://shields.io/badges/git-hub-contributors
+
+<!---contributor banner: https://shields.io/badges/git-hub-contributors
 fork banner: https://shields.io/badges/git-hub-forks
 star banner: https://shields.io/badges/git-hub-repo-stars
-issues banner: https://shields.io/badges/git-hub-issues
+issues banner: https://shields.io/badges/git-hub-issues--->
 
 </div>
 
@@ -30,12 +30,12 @@ It is noticed that whenever we lose something on campus, we have to run to the L
 
 ### Contributing
 
-> Fork and Star the project.
-> Clone the repo.
-> Create a new branch <Your_Github_username> 
-> Go to the issues tab and comment on a suitable issue of your choice and wait for the issue to be assigned to you.
-> Make the changes in your local repo and push the changes.
-> Create a pull request to the main branch.
-> Wait for the PR to be reviewed and merged.
+Fork and Star the project.
+Clone the repo.
+Create a new branch <Your_Github_username> 
+Go to the issues tab and comment on a suitable issue of your choice and wait for the issue to be assigned to you.
+Make the changes in your local repo and push the changes.
+Create a pull request to the main branch.
+Wait for the PR to be reviewed and merged.
 
 
