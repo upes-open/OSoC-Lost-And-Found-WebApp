@@ -8,7 +8,8 @@
 
 
 
-*Contributor banner *Fork banner *Star banner *Issues banner
+![GitHub contributors](https://img.shields.io/github/contributors/upes-open/OSoC_Lost-And-Found-WebApp)
+ *Fork banner *Star banner *Issues banner
 
 contributor banner: https://shields.io/badges/git-hub-contributors
 fork banner: https://shields.io/badges/git-hub-forks
