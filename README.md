@@ -20,8 +20,13 @@ issues banner: https://shields.io/badges/git-hub-issues--->
 
 ### About the Project
 It is noticed that whenever we lose something on campus, we have to run to the Lost and Found department and look for it there, and at times the item reaches there after we have already visited it once. Hence, a web app would be helpful to provide information about this. It will be simple and elegantly designed. There will be a login page, and then there will be two options to choose from: find a lost item or report an item that is found and belongs to someone else. Then there will be multiple options to choose from, including basic items such as ID Cards, Mobile Phones, wallets, ATM cards, notebooks, and others. If someone has to report a found item, they can either select identifiable or anonymous, and they can also provide their contact information if they want the owner to contact them, or else they can submit it to the lost and found department and tell the owner to claim it from there. The owner can prove their identity and claim the item.  
-> The web app will be built using React JS and MongoDB as a database. The final app will be containerized using Docker and deployed on AWS EC2. 
+> The web app will be built using React JS and MongoDB as a database. The final app will be containerized using Docker and deployed on AWS EC2.
 
+Let's get a walk through of how the completed project is supposed to work.
+> Starting with the login page, user will enter details (college mail ID) and their details will be validated. From the login page there will be 3 options:
+> * Report Lost Item- Its main function will be to get item details (image is not mandatory here) and store it in the Lost Items DB. Each item will be specified under the category it lies. See the catergory details below. Once user has successfully enterred the item details there will be an option to see realted items from items gallery.
+> * Report Found Item- Its main function will be to get item details (IMAGE IS MANDATORY HERE) and store it in the Found Items DB. Each item will be specified under the category it lies. See the catergory details below.
+> * Items Gallery- First user will get a select category button. Then it will show all the items found lately or over a period of time. These items have not been claimed yet. It will fetch data from the Found Items DB. Each item will have the option to be calimed. Once user slectes an item and clicks on ' claim now '
 
 ### Tech Stack
 
