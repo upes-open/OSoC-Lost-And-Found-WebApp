@@ -42,7 +42,7 @@ It is noticed that whenever we lose something on campus, we have to run to the L
 git clone https://github.com/upes-open/OSoC-Lost-And-Found-WebApp
 ```
 
-* Create a new branch `<Your_GitHub_username>`
+* Create a new branch `<Your_GitHub_username>` and switch to it with 
 
 ```bash
 git checkout -b <GitHub_usename>
