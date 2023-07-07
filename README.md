@@ -8,7 +8,8 @@
 
 
 
-![GitHub contributors](https://img.shields.io/github/contributors/upes-open/OSoC_Lost-And-Found-WebApp) ![GitHub forks](https://img.shields.io/github/forks/upes-open/OSoC_Lost-And-Found-WebApp) ![GitHub Repo stars](https://img.shields.io/github/stars/upes-open/OSoC_Lost-And-Found-WebApp) ![GitHub issues](https://img.shields.io/github/issues/upes-open/OSoC_Lost-And-Found-WebApp)
+![GitHub contributors](https://img.shields.io/github/contributors/upes-open/OSoC-Lost-And-Found-WebApp) ![GitHub forks](https://img.shields.io/github/forks/upes-open/OSoC-Lost-And-Found-WebApp) ![GitHub Repo stars](https://img.shields.io/github/stars/upes-open/OSoC-Lost-And-Found-WebApp)
+![GitHub issues](https://img.shields.io/github/issues/upes-open/OSoC-Lost-And-Found-WebApp)
 
 
 <!---contributor banner: https://shields.io/badges/git-hub-contributors
