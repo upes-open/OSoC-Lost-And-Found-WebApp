@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './styles.css';
+import { FaUserAlt, FaEnvelope, FaCodeBranch, FaCalendarAlt, FaPhoneAlt } from "react-icons/fa";
 
 const Details = () => {
   const [formValues, setFormValues] = useState({
     name: '',
+    email: '',
     sapId: '',
     branch: '',
     year: '',
@@ -34,39 +36,51 @@ const Details = () => {
     User Details Form
   </div>
     <div class="form-row">
+    <div class="input-data">
+  <input type="text" required onChange={handleChange} name='name' />
+  <div class="underline"></div>
+  <label for="">
+    <span class="input-icon"><FaUserAlt /></span>
+    Name
+  </label>
+</div>
       <div class="input-data">
-        <input type="text" required onChange={handleChange} name='name' />
+        <input type="text" required onChange={handleChange} name='email' />
         <div class="underline"></div>
-        <label for="">Name</label>
+        <label for="">
+          <span className='input-icon'><FaEnvelope /></span>
+          Email
+          </label>
       </div>
       <div class="input-data">
         <input type="text" required name='sapId' onChange={handleChange}/>
         <div class="underline"></div>
-        <label for="">SAP ID</label>
+        <label for="">
+          SAP ID</label>
       </div>
-   
       <div class="input-data">
         <input type="text" required name='branch' onChange={handleChange} />
         <div class="underline"></div>
-        <label for=""> Branch</label>
+        <label for="">
+          <span className='input-icon'> <FaCodeBranch /> </span>
+           Branch</label>
       </div>
       <div class="input-data">
         <input type="text" required name='year'  onChange={handleChange}  />
         <div class="underline"></div>
-        <label for=""> Year</label>
+        <label for=""> 
+        <span class='input-icon'> <FaCalendarAlt/> </span>
+        Year</label>
       </div> 
       <div class="input-data">
         <input type="text" required name='contactNumber'  onChange={handleChange}  />
         <div class="underline"></div>
-        <label for="">Contact Number</label>
-      </div> 
-      <div class="input-data">
-        <input type="text" required name='year'  onChange={handleChange}  />
-        <div class="underline"></div>
-        <label for=""> Year</label>
+        <label for="">
+          <span class='input-icon'><FaPhoneAlt /></span>
+          Contact Number</label>
       </div> 
       <div className='date-input'>
-      <label for="">Date</label>
+      <label for="">Date of Claiming Item</label>
         <input type="date" required name='date'  onChange={handleChange}  />       
       </div> 
       <div>
@@ -74,10 +88,7 @@ const Details = () => {
     Submit
   </button>
 </div>
-
        </div>
-  
-   
   </form>
 </div>
   );
