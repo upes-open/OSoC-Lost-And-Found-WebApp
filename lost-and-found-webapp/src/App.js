@@ -1,13 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import Details from './Details-Page/Details';
+import React from "react";
+import "./App.css";
+import Nav from "./Nav";
 
-function App() {
-  return (
-    <div className="App">
-     
+
+const App = () => (
+    <div>
+        <Nav />
     </div>
-  );
-}
+);
+
+
 
 export default App;
