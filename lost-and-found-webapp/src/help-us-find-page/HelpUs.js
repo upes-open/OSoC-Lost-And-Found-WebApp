@@ -51,13 +51,10 @@ const HelpUs = () => {
   return (
     <div className='container1 mt-4'>
 
-      <Button size="small" style={{ fontFamily: "'Poppins', sans-serif", marginTop: "10px", padding:"5px 10px", borderRadius: "5px" }} variant="contained" color="primary" href="/report">
-
-
-      <Typography variant="h5" style={{ textTransform:"none", fontWeight: "900"}} align="center" >
-        Help Us Find
+      <Typography variant="h4" className="gradient-text" style={{ textTransform:"none", }} align="center" >
+        <span style={{fontWeight:'600'}}>Help Us</span> Find
       </Typography>
-      </Button>
+
 
       <div className="cards-container">
         {lostItems.map((item) => (

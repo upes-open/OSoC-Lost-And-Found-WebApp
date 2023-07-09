@@ -25,9 +25,16 @@
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 18px 20px rgba(8, 8, 8, 0.1);
+    box-shadow: 0 18px 20px rgba(195, 173, 173, 0.1);
 }
 
 h1 {
     font-family: 'Montserrat', sans-serif;
 }
+
+.gradient-text {
+    background: linear-gradient(to right, rgb(28, 26, 26), rgb(146, 142, 142));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+    
