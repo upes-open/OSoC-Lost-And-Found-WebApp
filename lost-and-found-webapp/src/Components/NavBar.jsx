@@ -1,18 +1,6 @@
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import { AccountCircle } from '@mui/icons-material';
-import logo from "./images/Logofornavbar.png";
-import { FormControlLabel, Switch } from '@mui/material';
+import logo from "../images/Logofornavbar.png";
+import { FormControlLabel, Switch, AppBar, Box, Toolbar, IconButton, Container, Button } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 const pages = ['Report a Lost Item', 'Report a Found Item', 'Gallery'];
@@ -30,7 +18,7 @@ function NavBar({ mode, toggleMode }) {
   };
 
   useEffect(() => {
-    setSwitchLabel(mode === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    setSwitchLabel(mode === "dark" ? "Light mode" : "Dark mode");
   }, [mode])
 
 

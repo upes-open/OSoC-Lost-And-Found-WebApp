@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./App.css";
-import NavBar from "./NavBar";
+import NavBar from "./Components/NavBar";
 import FeedbackForm from "./feedback/FeedbackForm";
 import { ThemeContext } from "./Context/ThemeContext";
 
