@@ -20,8 +20,8 @@ function App() {
       <Router basename="/">
         {/* Add Menu Component */}
         <Navbarmenu />
-        
-        <Switch> 
+
+        <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/About" component={About} />
           <Route path="/LostItem" component={LostItem} />
@@ -31,7 +31,10 @@ function App() {
           <Route path="/HelpUsFind" component={HelpUsFind} />
           <Route path="/FAQ" component={FAQ} />
           <Route path="/Feedback" component={Feedback} />
-          <Route path="/feedback.html" render={() => <iframe src="/feedback.html" title="Feedback" />} />
+          <Route
+            path="/feedback.html"
+            render={() => <iframe src="/feedback.html" title="Feedback" />}
+          />
         </Switch>
       </Router>
     </div>
