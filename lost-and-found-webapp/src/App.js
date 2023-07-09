@@ -1,22 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./App.css";
-import { ThemeProvider, createTheme } from "@mui/material";
 import NavBar from "./NavBar";
-
+import FeedbackForm from "./feedback/FeedbackForm";
+import { ThemeContext } from "./Context/ThemeContext";
 
 
 const App = () => {
-  const theme = createTheme({
-    type: "dark"
-  });
-
+  const { mode, toggleMode } = useContext(ThemeContext);
   return (
-    <ThemeProvider theme={theme}>
-      <div>
-        <NavBar />
-        <FeedbackForm />
-      </div>
-    </ThemeProvider>
+    <div>
+      <NavBar mode={mode} toggleMode={toggleMode} />
+      {/* <FeedbackForm /> */}
+    </div>
   )
 };
 

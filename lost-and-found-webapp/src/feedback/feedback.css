@@ -1,24 +1,23 @@
-
-.container-star{
-    padding : 10px 30px;
+.container-star {
+    padding: 10px 30px;
     display: flex;
 
 }
 
-.body{
-    background : url(./bg.jpg) no-repeat center;
+.body {
+    background: url(./bg.jpg) no-repeat center;
     position: absolute;
     width: 100%;
     z-index: -1;
     background-size: cover;
-    height: 800px;  
+    height: 800px;
 }
 
-.container-star .star-widget input{
+.container-star .star-widget input {
     display: none;
 }
 
-.star-widget label{
+.star-widget label {
     font-size: 40px;
     color: #e5e0e0;
     padding: 10px;
@@ -26,72 +25,70 @@
     transition: all 0.2s ease;
 }
 
-input:not(:checked) ~ label:hover,
-input:not(:checked) ~ label:hover ~ label{
-    color:rgb(231, 89, 89);
-}
-
-input:checked ~ label{
+input:not(:checked)~label:hover,
+input:not(:checked)~label:hover~label {
     color: rgb(231, 89, 89);
 }
 
-input#rate-5:checked ~ label{
+input:checked~label {
+    color: rgb(231, 89, 89);
+}
+
+input#rate-5:checked~label {
     color: rgb(236, 61, 61);
     text-shadow: 0 0 10px #952;
-} 
+}
 
-header{
+header {
     width: 100%;
     font-size: 17px;
-    font-weight: 500; 
-    margin: 5px 0 0px 0;
+    font-weight: 500;
+    /* margin: 5px 0 0px 0; */
     text-align: center;
     transition: all 0.2s ease;
 
 }
 
-input#rate-1:checked ~ header:before{
-    content:"I just hate it 😠"; 
+input#rate-1:checked~header:before {
+    content: "I just hate it 😠";
 }
 
-input#rate-2:checked ~ header:before{
-    content:"I don't like it 😞"; 
+input#rate-2:checked~header:before {
+    content: "I don't like it 😞";
 }
 
-input#rate-3:checked ~ header:before{
-    content:"It is Okay 😐"; 
+input#rate-3:checked~header:before {
+    content: "It is Okay 😐";
 }
 
-input#rate-4:checked ~ header:before{
-    content:"I like it 😃"; 
+input#rate-4:checked~header:before {
+    content: "I like it 😃";
 }
 
-input#rate-5:checked ~ header:before{
-    content:"I love it 😍"; 
+input#rate-5:checked~header:before {
+    content: "I love it 😍";
 }
 
 
-p{
+p {
     font-family: "Poppins", sans-serif;
 
 }
 
-.right{
-    background-color:#fdfdfd;
+.right {
+    background-color: #fdfdfd;
     border-radius: 5px;
 
 }
 
-.addnotes{
-    width : 600px
+.addnotes {
+    width: 600px
 }
 
 
-@media(max-width: 600px)
-{
-    .addnotes{
-        width:auto;
+@media(max-width: 600px) {
+    .addnotes {
+        width: auto;
 
     }
 }
-
