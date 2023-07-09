@@ -1,11 +1,13 @@
 const express = require("express");
 const connectToMongo = require("./db");
+const cors = require("cors");
 
 const app = express();
-const port = 3000;
+const port = 3002;
 
 connectToMongo();
 
+app.use(cors())
 app.use(express.json()) 
 
 app.use('/feedback', require('./routes/feedback'))  
