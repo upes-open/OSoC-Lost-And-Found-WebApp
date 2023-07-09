@@ -1,21 +1,43 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Nav = () => (
-    <header>
-        <nav>
-            <ul  className='list'>
-                <li ><a className='link head' href="">Lost & Found</a></li>
-                <li><a className='link' href="">Home</a></li>
-                <li><a className='link' href="">Lost Items</a></li>
-                <li><a className='link' href="">Found Item</a></li>
-                <li><a className='link' href="">Report a Lost Item</a></li>
-                <li><a className='link' href="">Report a Found Item</a></li>
-                <li><a className='link' href="">FAQ</a></li>
-                <li><a className='link' href="">Sign In</a></li>
-                <li><a className='link' href="">Sign Up</a></li>
-            </ul>
-        </nav>
-    </header>
-)
+  <header>
+    <nav>
+      <ul className='list'>
+        <li>
+          <Link to='/' className='link head'>Lost & Found</Link>
+        </li>
+        <li>
+          <Link to='/' className='link'>Home</Link>
+        </li>
+        <li>
+          <Link to='/lost-items' className='link'>Lost Items</Link>
+        </li>
+        <li>
+          <Link to='/found-item' className='link'>Found Item</Link>
+        </li>
+        <li>
+          <Link to='/help-us-find' className='link'>Help Us Find</Link>
+        </li>
+        <li>
+          <Link to='/report-lost-item' className='link'>Report a Lost Item</Link>
+        </li>
+        <li>
+          <Link to='/report-found-item' className='link'>Report a Found Item</Link>
+        </li>
+        <li>
+          <Link to='/faq' className='link'>FAQ</Link>
+        </li>
+        <li>
+          <Link to='/signin' className='link'>Sign In</Link>
+        </li>
+        <li>
+          <Link to='/signup' className='link'>Sign Up</Link>
+        </li>
+      </ul>
+    </nav>
+  </header>
+);
 
 export default Nav;
