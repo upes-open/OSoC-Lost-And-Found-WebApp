@@ -5,12 +5,17 @@ const F_schema = require('../models/Fschema')
 
 router.post('/', async (req, res) => {
 
-    let feed = await F_schema.create({
-        email : req.body.email,
-        feedback : req.body.feedback
-    });
-
-    res.json({feed});
+    try {
+        let feed = await F_schema.create({
+            email: req.body.email,
+            feedback: req.body.feedback
+        });
+        res.json({ feed });
+    }
+    catch (error) {
+        console.log("error", error.message);
+    }
+    
 })
 
 
