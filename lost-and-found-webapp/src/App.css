@@ -1,73 +1,361 @@
-@import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-.App {
+body {
+  background-image: url("./img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: auto;
+  padding: 0px;
+  overflow-x: hidden;
+  background-repeat: repeat;
+  font-family: 'Inter', sans-serif;
+  display: grid;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+img {
+  max-width: 40%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  margin-top: -15px; /* Adjust this value as needed to align with the navigation items */
+  margin-left: 20px; /* Adjust this value as needed to create spacing from the left side */
+  margin-bottom: 10px;
+}
+
+.sec__one {
+  position: relative;
+  width: 100%;
+  display: flex;
+  padding: 60px 0;
+}
+
+.sec__one h1 {
   text-align: center;
+  display: block;
+  margin: 0 auto;
+  color: #07a8ff;
+  font-family: 'Inter', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navBar .logo img {
+  float: left;
+  max-height: 120px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.is-active {
+  color: #07a8ff!important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navBar .col-md-3 {
+  z-index: 7;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.link{
-  color: white;
-  text-decoration: none; 
-  /* color: white; */
-}
-.link:hover{
-  color: rgb(252, 227, 0);
-  text-decoration: none; 
-  /* color: white; */
-}
-*{
+ul.main-menu {
+  display: inline-flex;
+  list-style: none;
+  margin: 0px auto 0;
   padding: 0;
-  margin: 0;
+  float: right;
+  z-index: 7;
 }
 
-.head{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
-  font-family: 'Fasthand', cursive;
+ul.main-menu>li.menu-item:first-child {
+  padding-left: 0;
+  margin-left: 0;
 }
 
-.list{
-  display: flex;
+.menu-item {
+  line-height: 23px;
+}
+
+li {
   list-style-type: none;
-  justify-content:space-between;
-  align-items: center;
-  background-color: coral;
-  padding: 10px;
-  font-family: 'Poppins', sans-serif;
-  transition: color 0.15s;
+}
+
+.menu-item a {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 40px;
+  position: relative;
+  display: block;
+  color: #545050;
+  margin: 27px 17px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header__middle__logo {
+  width: 20%;
+  display: inline-block;
+  float: left;
+  margin-bottom: 30px; /* Adjust the value (10px in this case) to move the logo upward */
+  margin-top: 20px; /* Adjust the value (20px in this case) to center the logo vertically */
+  text-align: center; /* Add this line to center the logo horizontally */
+}
+
+.header__middle__menus {
+  width: 70%;
+  display: inline-block;
+  float: left;
+  text-align: center; /* Add this line to center the menu items horizontally */
+}
+
+.menu-item.menu__qqqitem a {
+  margin: 27px 10px;
+}
+
+.header__middle__search {
+  width: 10%;
+  display: inline-block;
+  float: right;
+  padding: 36px 3px 27px 3px;
+  border-left: 1px solid lavender;
+}
+
+.header__middle {
+  display: flex;
+  width: 100%;
+  float: left;
+  border-bottom: 1px dashed lavender;
+  position: relative;
+}
+
+.header__middle__logo {
+  width: auto;
+  margin-right: auto;
+  margin-bottom: 10px; /* Adjust this value as needed to move the logo up */
+}
+
+img {
+  max-width: 40%;
+  height: auto;
+  margin-top: -15px; /* Adjust this value as needed */
+  margin-right: 20px; /* Adjust this value as needed */
+}
+
+.header__middle__menus span.text {
+  position: absolute;
+  right: 177px;
+  bottom: 10px;
+  font-size: 14px;
+  color: #ff1800;
+}
+
+.sub__menus__arrows {
+  position: relative;
+}
+
+.sub__menus__arrows svg,
+.sub__menus__arrows__full svg {
+  padding-top: 0px;
+  position: absolute;
+  top: 13px;
+}
+
+.sub__menus {
+  position: absolute;
+  display: none;
+  background: white;
+  border: 1px solid lavender;
+  width: 227px;
+  left: -17px;
+  padding: 2px 0 0 0;
+  z-index: 1000;
+  box-shadow: 0 10px 12px rgb(22 33 39 / 25%);
+}
+
+@media (max-width: 767px) { 
+  .header__middle .active {
+    color: #ff3d00!important;
+  }
+}
+
+@media (min-width: 992px) { 
+  .sub__menus__arrows:hover .sub__menus {
+    display: block;
+  }
+  .sub__menus__arrows__full:hover .sub__menus {
+    display: block;
+    z-index: 1000000;
+  }
+}
+
+/* .menu-item .sub__menus a {
+  padding: 7px 0 0px 0;
+  margin: 7px 27px;
+}
+
+.menu-item:hover > a {
+  text-decoration: underline;
+  color: #07a8ff !important;
+  margin-top: 4px;
+  /* box-shadow: 12px 8px 2px rgba(0, 0, 0, 0.15); */
+
+
+
+.menu-item:hover > a {
+  text-decoration: underline;
+  color: #07a8ff !important;
+  margin-top: 4px;
+}
+
+.menu-item .sub__menus li:hover a {
+  color: white !important;
+  background-color: #07a8ff; /* Add this line to set the background color to blue */
+}
+
+  /* border-bottom: 2px solid lightblue; /* Change the color to your desired light blue shade */
+  /*  Adjust the value (5px in this case) to add margin from the top */ */
+
+
+
+
+
+
+.menu-item .sub__menus li:hover a {
+  color: #07a8ff !important;
+}
+
+.header__middle__logo img {
+  max-width: 207px;
+  margin: 8px 0 0 0;
+}
+
+@media (max-width: 991px) {
+  .header__middle__logo {
+    width: 77%;
+  }
+  .header__middle__menus {
+    width: 20%;
+  }
+  .header__middle__logo img {
+    max-width: 197px;
+    margin: 27px 0 0 0;
+  }
+  .main-nav .menubar__button:hover {
+    background-color: #f44336;
+  }
+  .main-nav .menu-item:hover > a {
+    color: #07a8ff !important;
+  }
+  .main-nav .menubar__button {
+    display: block!important;
+    float: right;
+    background-color: #080808;
+    color: #fff;
+    padding: 6px 7px;
+    border-radius: 5px;
+    margin: 27px auto 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 10037;
+  }
+  .main-nav .menubar__button svg {
+    font-size: 27px;
+  }
+  .main-nav ul.menuq2 {
+    display: block!important;
+    position: absolute;
+    left: 0;
+    z-index: 10007;
+    background-color: #d8f1ff;
+   
+
+border-bottom: 3px solid #ff3d00;
+    right: 0;
+    padding-bottom: 17px;
+    padding-top: 57px;
+  }
+  .main-nav .menu-item a {
+    margin: 10px 17px;
+    text-align: center;
+    color: #000000;
+  }
+  .main-nav  ul.main-menu {
+    display: none;
+  }
+  .main-nav .sub__menus__arrows:hover .sub__menus {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+  .sub__menus__Active {
+    display: block!important;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+  .sub__menus__Active2 {
+    display: block!important;
+  }
+  .menus__categorysss {
+    display: none;
+  }
+  .menus__categorysss2 {
+    display: none;
+  }
+  .menu-item .sub__menus__full a {
+    text-align: left;
+  }
+}
+
+.navBar {
+  display: flex;
+  justify-content: center; /* Align the navbar in the center horizontally */
+}
+
+ul.main-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  margin: 0 10px;
+}
+
+.menu-item a {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 40px;
+  display: block;
+  color: #545050;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header__middle__logo {
+  width: 20%;
+  display: inline-block;
+  float: left;
+  margin: 20px;
+  text-align: center; /* Center the logo horizontally */
+}
+
+.header__middle__menus {
+  width: 70%;
+  display: inline-block;
+  float: left;
+  text-align: center; /* Center the menu items horizontally */
+}
+
+.header__middle__search {
+  width: 10%;
+  display: inline-block;
+  float: right;
+  padding: 36px 3px 27px 3px;
+  border-left: 1px solid lavender;
 }

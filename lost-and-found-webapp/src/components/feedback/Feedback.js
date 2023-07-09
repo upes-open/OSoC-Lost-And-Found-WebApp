@@ -1,8 +1,8 @@
 import React from 'react';
-import './feedback.css';
+import './Feedback.css';
 import { Button, TextField } from '@mui/material';
 
-const FeedbackForm = () => {
+const Feedback = () => {
   const [details, setDetails] = React.useState({ email: "", feedback: "" });
   const host = "http://localhost:3002";
 
@@ -92,4 +92,4 @@ const FeedbackForm = () => {
   )
 }
 
-export default FeedbackForm
+export default Feedback
