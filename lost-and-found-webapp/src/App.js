@@ -31,6 +31,7 @@ function App() {
           <Route path="/HelpUsFind" component={HelpUsFind} />
           <Route path="/FAQ" component={FAQ} />
           <Route path="/Feedback" component={Feedback} />
+          <Route path="/feedback.html" render={() => <iframe src="/feedback.html" title="Feedback" />} />
         </Switch>
       </Router>
     </div>
