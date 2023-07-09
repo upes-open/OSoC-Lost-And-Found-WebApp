@@ -1,0 +1,180 @@
+body{
+    background: rgb(4,4,0);
+    background: linear-gradient(90deg, rgba(4,4,0,1) 0%, rgba(142,250,252,1) 0%, rgba(163,226,242,1) 34%, rgba(157,242,176,1) 65%, rgba(122,245,126,1) 100%);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+}
+.container{
+  background: #fff;
+  width: 500px;
+  padding: 25px 40px 10px 40px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-dirextion: column;
+}
+.container .text{
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.container form{
+  padding: 3px 0 0 0;
+  align-items: center;
+  justify-content: center;
+}
+.container form .form-row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+form .input-data{
+  display: flex;
+  width: 100%;
+  height: 40px;
+  position: relative;
+  margin-top: 10%;
+  margin-left: 40%;
+}
+
+.input-data input,
+.textarea textarea{
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0,0,0, 0.12);
+}
+.input-data input:focus ~ label, .textarea textarea:focus ~ label,
+.input-data input:valid ~ label, .textarea textarea:valid ~ label{
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #3498db;
+}
+.textarea textarea{
+  resize: none;
+  padding-top: 10px;
+}
+.input-data label{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  pointer-events: none;
+  bottom: 15px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.input-data .underline{
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+.input-data .underline:before{
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: #3498db;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.input-icon {
+  margin-right: 0.5rem;
+}
+
+.date-input{
+  margin-left: 20%;
+  margin-top: 10%;
+  display: flex;
+}
+.date-input  input{
+  margin-left: 5%;
+}
+
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before,
+.textarea textarea:focus ~ .underline:before,
+.textarea textarea:valid ~ .underline:before{
+  transform: scale(0);
+}
+.gradient-button {
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 50%;
+  margin-top: 20%;
+}
+
+.gradient-button:hover {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@media (max-width: 700px) {
+  .container{
+    width: 300px;
+  }
+  .container .text{
+    font-size: 30px;
+  }
+  .container form{
+    padding: 10px 0 0 0;
+  }
+  .container form .form-row{
+    display: block;
+  }
+  form .form-row .input-data{
+    margin: 35px 0!important;
+  }
+ .gradient-button{
+  margin-left: 5%;
+ }
+ .date-input{
+  margin-left: 2%;
+  margin-top: 10%;
+  display: flex;
+}
+}
+
+    
