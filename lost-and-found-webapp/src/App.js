@@ -7,8 +7,8 @@ import HelpUs from "./help-us-find-page/HelpUs"
 const App = () => (
     <div>
         <Nav />
-        {/* <FeedbackForm /> */}
-        <HelpUs/>
+        <FeedbackForm />
+        {/* <HelpUs/> */}
     </div>
 );
 

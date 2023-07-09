@@ -26,6 +26,7 @@ const FeedbackForm = () => {
 
     const json = await response.json();
     console.log(json);
+    setDetails({email:"", feedback:""});
   }
 
   return (
