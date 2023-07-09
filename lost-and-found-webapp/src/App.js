@@ -1,13 +1,23 @@
 import React from "react";
 import "./App.css";
-import Nav from "./Nav";
+import { ThemeProvider, createTheme } from "@mui/material";
+import NavBar from "./NavBar";
 
 
-const App = () => (
-    <div>
-        <Nav />
-    </div>
-);
+
+const App = () => {
+  const theme = createTheme({
+    type: "dark"
+  });
+
+  return (
+    <ThemeProvider theme={theme}>
+      <div>
+        <NavBar />
+      </div>
+    </ThemeProvider>
+  )
+};
 
 
 
