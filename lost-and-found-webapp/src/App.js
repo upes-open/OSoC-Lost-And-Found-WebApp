@@ -14,6 +14,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <div>
         <NavBar />
+        <FeedbackForm />
       </div>
     </ThemeProvider>
   )
