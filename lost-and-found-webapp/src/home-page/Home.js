@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 import './home.css';
 import image from './home1.png';
 import { Button } from '@mui/material';
@@ -6,7 +6,7 @@ import { Button } from '@mui/material';
 const HomePage = () => {
 
   const [text, setText] = React.useState('Discover the Lost');
-  const taglineArr = ['Discover the Lost', 'Connect the Found'];
+  const taglineArr = useMemo(() => ['Discover the Lost', 'Connect the Found'], []);
 
   const iRef = useRef(0);
 
@@ -23,7 +23,7 @@ const HomePage = () => {
       clearInterval(intervalId);
     };
 
-  }, []);
+  }, [taglineArr]);
 
   return (
     <>
