@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap');
+
+.addnotes {
+    width: 600px;
+}
+
+
+@media(max-width: 600px) {
+    .addnotes {
+        width: auto;
+    }
+}
+
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+span {
+    font-family: 'Cookie', cursive;
+    font-size: 6rem;
+}
+
+.respo {
+    font-family: 'Merienda', cursive;
+}
+
+.body{
+    /* background: linear-gradient(to left bottom, rgb(101 173 191), rgb(237 242 243)); */
+}
+
+.img-fluid{
+    background-color: transparent;
+}

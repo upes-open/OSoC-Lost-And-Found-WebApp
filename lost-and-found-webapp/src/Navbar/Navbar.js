@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <Router>
+
       <header className="header__middle">
         <div className="container">
           <div className="row">
@@ -88,7 +88,7 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-    </Router>
+
   );
 };
 

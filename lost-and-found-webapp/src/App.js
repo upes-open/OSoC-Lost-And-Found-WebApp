@@ -3,14 +3,19 @@ import "./App.css";
 import FeedbackForm from "./feedback/FeedbackForm";
 import Navbar from "./Navbar/Navbar";
 import HelpUs from "./help-us-find-page/HelpUs"
-import GoToTop from "./go-to-top/GoToTop";
+import Home from "./home-page/Home"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = () => (
     <div>
-        <Navbar />
-        {/* <FeedbackForm /> */}
-        <HelpUs/>
-        <GoToTop/>
+
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="/helpusfind" element={<HelpUs />} />
+            </Routes>
+        </Router>
     </div>
 
 );
