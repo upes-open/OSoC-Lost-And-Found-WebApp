@@ -7,12 +7,14 @@ const HomePage = () => {
 
   const [text, setText] = React.useState('Discover the Lost');
   const taglineArr = ['Discover the Lost', 'Connect the Found'];
-  let i = 0;
+  
+  let i = 0; 
 
   useEffect(() => {
     document.body.style.background = "linear-gradient(to right top, rgb(101 173 191), rgb(237 242 243))";
     const intervalId = setInterval(() => {
       setText(taglineArr[i]);
+      // eslint-disable-next-line
       i = (i + 1) % taglineArr.length;
     }, 1400);
 
