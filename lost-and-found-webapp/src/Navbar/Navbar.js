@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FiChevronDown } from 'react-icons/fi';
 import logo from '../images/Logofornavbar.png';
 import './Navbar.css';

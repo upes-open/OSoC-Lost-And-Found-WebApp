@@ -36,7 +36,7 @@ const HomePage = () => {
                 <Button href="/about" variant="contained" color="secondary" style={{ textTransform: "none", borderRadius: "20px", fontFamily: "'Poppins', sans-serif", fontSize: "1.1rem" }}>About Us</Button>            </div>
             </div>
             <div className="col-md-7 pt-5 d-flex flex-column align-items-center">
-              <img className="img-fluid" style={{ width: "75%" }} src={image} alt="image" />
+              <img className="img-fluid" style={{ width: "75%" }} src={image} alt="" />
             </div>
           </div>
         </div>
