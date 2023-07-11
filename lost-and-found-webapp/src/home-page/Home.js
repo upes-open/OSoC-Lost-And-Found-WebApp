@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './home.css';
 import image from './home1.png';
 import { Button } from '@mui/material';
@@ -7,15 +7,15 @@ const HomePage = () => {
 
   const [text, setText] = React.useState('Discover the Lost');
   const taglineArr = ['Discover the Lost', 'Connect the Found'];
-  
-  let i = 0; 
+
+  const iRef = useRef(0);
 
   useEffect(() => {
+
     document.body.style.background = "linear-gradient(to right top, rgb(101 173 191), rgb(237 242 243))";
     const intervalId = setInterval(() => {
-      setText(taglineArr[i]);
-      // eslint-disable-next-line
-      i = (i + 1) % taglineArr.length;
+      setText(taglineArr[iRef.current]);
+      iRef.current = (iRef.current + 1) % taglineArr.length;
     }, 1400);
 
     return () => {
@@ -27,7 +27,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div style={{height:"100vh"}}>
+      <div style={{ height: "100vh" }}>
         <div className="container-fluid" >
           <div className="row">
             <div className="col-md-5 ps-5">
