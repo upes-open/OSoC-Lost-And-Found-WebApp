@@ -72,16 +72,18 @@ const Navbar = () => {
               <Switch
                 checked={theme === darkTheme}
                 onChange={toggleTheme}
-                onColor="#04b7f3"
-                onHandleColor="#f5f5f5"
-                handleDiameter={20}
-                uncheckedIcon={false}
-                checkedIcon={false}
-                height={10}
-                width={40}
+                onColor="#2C3245"
+                offColor='#E1E2E2'
+                onHandleColor="#fff"
+                handleDiameter={10}
+                uncheckedIcon="🔆"
+                checkedIcon= "🌙"
+                height={25}
+                width={57}
                 className="theme-toggle-switch"
               />
             </div>
+            {/* icons={{ checked: , unchecked: "🔆" }} */}
 
             {/* Nav Items */}
             <div className="header__middle__menus">
