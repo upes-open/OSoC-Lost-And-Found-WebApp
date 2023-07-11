@@ -1,155 +1,124 @@
-
 .header__middle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  
-  
-  .header__middle__logo {
-    width: 20%;
-    display: flex;
-    align-items: center;
-  }
-  
-  .header__middle__logo img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .header__middle__menus {
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  
-  .main-nav {
-    display: flex;
-    align-items: center;
-  }
-  
-  .main-menu {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    /* background: transparent; */
-  }
-  
-  .menu-item {
-    margin-left: 20px;
-  }
-  
-  .menu-item:first-child {
-    margin-left: 0;
-  }
-  
-  .menu-item a {
-    display: flex;
-    align-items: center;
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .menu-item a:hover {
-    color: #04b7f3;
-    /* color: #ff8800; */
-  }
-  
-  .sub__menus {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    padding: 10px 0;
-    list-style: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  .sub__menus li {
-    margin: 0;
-  }
-  
-  .sub__menus li a {
-    display: block;
-    padding: 10px 20px;
-    color: #333;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .sub__menus li a:hover {
-    background-color:  #04b7f3;
-    ;
-    color: #fff;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
-  
-  /* ... other CSS rules ... */
-/* ... other CSS rules ... */
+.header__middle__logo {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.header__middle__logo img {
+  width: 100%;
+  height: auto;
+}
+
+.header__middle__menus {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.main-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu-item {
+  margin-left: 20px;
+}
+
+.menu-item:first-child {
+  margin-left: 0;
+}
+
+.menu-item a {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-item a:hover {
+  color: #04b7f3;
+}
+
+.sub__menus {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 10px 0;
+  list-style: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.sub__menus li {
+  margin: 0;
+}
+
+.sub__menus li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sub__menus li a:hover {
+  background-color: #04b7f3;
+  color: #fff;
+}
 
 .dropdown {
-    position: relative;
-  }
-  
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    padding: 0;
-    margin: 0;
-    background-color: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  .menu-item:hover .dropdown-menu {
-    display: block;
-  }
-  
-  .dropdown-menu li {
-    margin: 0;
-  }
-  
-  .dropdown-menu li a {
-    display: block;
-    padding: 10px 20px;
-    color: #333;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .dropdown-menu li a:hover {
-    background-color:  #04b7f3;
+  position: relative;
+}
 
-    color: #fff;
-  }
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
 
+.menu-item:hover .dropdown-menu {
+  display: block;
+}
 
+.dropdown-menu li {
+  margin: 0;
+}
 
-  
-  .header__middle {
-    background: none;
-  }
-  
-  .main-menu {
-    background: none;
-  }
-  
-  .sub__menus {
-    background: none;
-  }
-  
-  .dropdown-menu {
-    background-color: white;
-    box-shadow: none;
-  }
-  
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #04b7f3;
+  color: #fff;
+}
+

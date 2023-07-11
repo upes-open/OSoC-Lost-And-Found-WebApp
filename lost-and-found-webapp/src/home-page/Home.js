@@ -12,7 +12,7 @@ const HomePage = () => {
 
   useEffect(() => {
 
-    document.body.style.background = "linear-gradient(to right top, rgb(101 173 191), rgb(237 242 243))";
+    document.body.style.background = "black";
     const intervalId = setInterval(() => {
       setText(taglineArr[iRef.current]);
       iRef.current = (iRef.current + 1) % taglineArr.length;
