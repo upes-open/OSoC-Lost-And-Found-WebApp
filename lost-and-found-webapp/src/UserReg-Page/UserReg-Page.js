@@ -9,41 +9,39 @@ export default function UserReg() {
         <div className='logo'>
             <img src={logo} alt='logo'/>
         </div>
-        <div className='login'>
+        <div className='login-form'>
           <h2>Sign Up Here</h2>
-          <div className='form'>
           <form>
-              <div>
-                    <label for='firstname'>First Name:</label>
-                    <br/>
-                    <input type='text' className='inpt' name='username' id='firstname' placeholder='firstname' required/>
-                </div>
-                    <div>
-                    <label for='sname'>Secon Name:</label>
-                    <br/>
-                    <input type='text' className='inpt'  name='sname' id='sname' required/>
-                </div>
-                <div>
-                    <label for='email'>Email:</label>
-                    <br/>
-                    <input type='email'  className='inpt' name='email' id='email' required/>
-                </div>
-                <div>
-                    <label for='phoneNo'>Phone No:</label>
-                    <br/>
-                    <input type='tel' className='inpt' name='phoneNo' id='phoneNo ' required/>
-                </div>
-                <div>
-                  <input type='checkbox' /> Terms & Conditions
-                </div>
-                  <button type='submit'>SUBMIT</button>
-
-                <div className='loginAlt'>
-                   <p>Already have an account? <a href='/login'>Login</a></p>
-                </div>
-          </form>
-        
+          <div className='form-group'>
+            <div className='InptGrp1'>
+              <div class="mb-3">
+                <label for="firstname" class="form-label">User Name</label>
+                <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp" />
+              </div>
+              <div class="mb-3">
+                <label for="Sname" class="form-label">Email address</label>
+                <input type="text" class="form-control" id="Sname" aria-describedby="emailHelp" />
+              </div>
           </div>
+            <div className='InptGrp2'>
+                <div class="mb-3">
+                  <label for="email1" class="form-label">Phone No</label>
+                  <input type="number" class="form-control" id="email1" aria-describedby="emailHelp" />
+                  {/* <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> */}
+                </div>
+                <div class="mb-3">
+                  <label for="password1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password1" />
+                </div>
+            </div>
+          </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="Check1" />
+              <label class="form-check-label" for="Check1">Terms & Conditions</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
         </div>
     </div>
   )
