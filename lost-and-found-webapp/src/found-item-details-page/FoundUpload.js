@@ -169,6 +169,7 @@ const FoundUpload = () => {
                             style={{ marginTop: "22px", paddingBottom: "15px" }}
                             value={place}
                             onChange={(e) => setPlace(e.target.value)}
+                            required
                         />
                     </label>
                 </div>
