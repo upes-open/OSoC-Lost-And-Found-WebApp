@@ -1,0 +1,223 @@
+@import url(http://fonts.googleapis.com/css?family=Laila:400,700);
+
+h1 {
+  padding-top: 10px;
+  display: block;
+  font-size: 2.3em;
+  line-height: 1.45em;
+  font-family: 'Laila', serif;
+  text-align: center;
+  font-weight: bold;
+  color: #555;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+
+
+form {
+  display: block;
+  margin: 30px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 20px;
+  font-size: 0;
+}
+
+form>div>label {
+  display: block;
+  padding: 20px 20px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #645e5e;
+  cursor: pointer;
+}
+
+form>div.switch>label {
+  padding: 16px 20px 13px;
+}
+
+.col-2,
+.col-3,
+.col-4,
+.col-5 {
+  border-bottom: 1px solid #e4e4e4;
+}
+
+form>div>.col-4 {
+  height: 86px;
+}
+
+label>input {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 27px;
+  line-height: 27px;
+  margin: 5px -5px 0;
+  padding: 5px 5px 3px;
+  border: none;
+  outline: none;
+  color: #555;
+  background-color: #fff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  opacity: .4;
+  /* font-weight: bold; */
+  transition: all linear .3s;
+}
+
+.col-submit {
+  text-align: center;
+  padding: 20px;
+}
+
+label>select,
+.select {
+  display: block;
+  width: 100%;
+  padding: 0;
+  color: #555;
+  margin: 16px 0 6px;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  opacity: .4;
+  transition: all linear .3s;
+}
+
+label>input:focus,
+label>select:focus,
+.select:focus {
+  opacity: 1;
+}
+
+
+
+button {
+  height: 35px;
+  border: none;
+  border-radius: 20px;
+  margin: 0 0 15px 0;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  outline: none;
+}
+
+button.submitbtn {
+  background-image: -moz-linear-gradient(#a46bd9, #8b59b9);
+  background-image: -webkit-linear-gradient(#a46bd9, #8b59b9);
+  background-image: linear-gradient(#a46bd9, #8b59b9);
+  border-bottom: 1px solid #683c8c;
+  cursor: pointer;
+  color: #fff;
+}
+
+button.submitbtn:hover {
+  background-image: -moz-linear-gradient(#8b59b9, #7a4a9e);
+  background-image: -webkit-linear-gradient(#8b59b9, #7a4a9e);
+  background-image: linear-gradient(#8b59b9, #7a4a9e);
+}
+
+button.submitbtn:active {
+  height: 34px;
+  border-bottom: 0;
+  margin: 1px 0 0 0;
+  background-image: -moz-linear-gradient(#7a4a9e, #8b59b9);
+  background-image: -webkit-linear-gradient(#7a4a9e, #8b59b9);
+  background-image: linear-gradient(#7a4a9e, #8b59b9);
+  -moz-box-shadow: inset 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+
+
+@media(min-width: 850px) {
+  form>div {
+    display: inline-block;
+    
+  }
+
+  .col-submit {
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-5 {
+    box-shadow: 1px 1px #e4e4e4;
+    border: none;
+  }
+
+  .col-2 {
+    width: 50%
+  }
+
+  .col-3 {
+    width: 33.3333333333%
+  }
+
+  .col-4 {
+    width: 25%
+  }
+
+  .col-5 {
+    width: 75%
+  }
+
+  .col-submit button {
+    width: 30%;
+    margin: 15px;
+  }
+}
+
+@media (max-width: 850px) {
+  form>div {
+    display: block;
+  }
+
+  .col-submit {
+    display: block;
+  }
+
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-5 {
+    box-shadow: 1px 1px #e4e4e4;
+    border: none;
+  }
+
+  .col-2 {
+    width: 100%;
+  }
+
+  .col-3 {
+    width: 100%;
+  }
+
+  .col-4 {
+    width: 100%;
+  }
+
+  .col-5 {
+    width: 100%;
+  }
+
+  .col-submit button {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
