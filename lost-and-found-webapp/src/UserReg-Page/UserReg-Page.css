@@ -1,0 +1,51 @@
+.bdy {
+    background-image: url('../images/bg.jpg');
+    /* background-repeat: no-repeat; */
+    height: 100vh;
+ 
+}
+
+.logo img {
+    width: 20rem;
+    height: 20rem;
+    position: relative;
+    top: -5rem;
+    left: 30rem
+}
+
+.login {
+    position:relative;
+    top: -10rem;
+    margin: 0 30rem;
+    display: block;
+    justify-content: center;
+}
+.login h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom:20px;
+}
+form {
+    border: .5px solid black;
+    border-radius: 2rem;
+    box-shadow:  2px 2px 10px 3px black ;
+    height: 60vh;
+    padding: 30px;
+    
+}
+
+.inpt{
+    width: 20rem;
+    margin-bottom: .5rem;
+}
+
+form button {
+    margin-top: 1rem;
+    width: 20rem;
+    border-radius: .4rem;
+    background-color:  white;
+}
+
+form .loginAlt {
+    margin-top: 20px;
+}

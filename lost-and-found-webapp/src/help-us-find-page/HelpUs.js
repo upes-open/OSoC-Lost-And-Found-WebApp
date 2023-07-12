@@ -73,7 +73,7 @@ const HelpUs = () => {
               <Typography variant="body2" color="text.secondary">
                 {item.description}
               </Typography>
-              <Button size="small" style={{ fontFamily: "'Poppins', sans-serif", marginTop: "10px", borderRadius: "20px" }} variant="contained" color="secondary" href="/report"> REPORT AS FOUND </Button>
+              <Button size="small" style={{ fontFamily: "'Poppins', sans-serif", marginTop: "10px", borderRadius: "20px" }} variant="contained" color="secondary" href={`/report/${item.id}`}> REPORT AS FOUND </Button>
             </CardContent>
           </Card>
         ))}
