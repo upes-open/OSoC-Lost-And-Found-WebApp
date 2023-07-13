@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./found.css";
-// import image from "./bg.jpeg";
+import image from "./bg.jpeg";
 import Switch from 'react-switch';
 
 const FoundUpload = () => {
@@ -70,6 +70,14 @@ const FoundUpload = () => {
       console.log('Error submitting form:', error);
     }
   };
+
+  useEffect(() => {
+    document.body.style.background = `url(${image}) `;
+    document.body.style.backgroundSize = 'cover';
+    return () => {
+      document.body.style.background = null;
+    };
+  }, []);
 
   return (
     <>
