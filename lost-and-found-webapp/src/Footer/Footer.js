@@ -33,19 +33,19 @@ const Footer = () => {
             <ul className="dropdown-menu">
               <li>
                 <a className="link" href='https://www.instagram.com/upes_dehradun/'>
-                  <img src={image} className="instapic" />
+                  <img src={image} className="instapic"  alt="Instagram-logo" />
                   <span className="text">Instagram</span>
                 </a>
               </li>
               <li>
                 <a href='https://twitter.com/UPESDehradun'>
-                  <img src={image1} className="instapic" />
+                  <img src={image1} className="instapic"  alt="Twitter-logo" />
                   <span className="text">Twitter</span>
                 </a>
               </li>
               <li>
                 <a href='https://www.facebook.com/UPESddnuk/'>
-                  <img src={image2} className="instapic" />
+                  <img src={image2} className="instapic"  alt="Facebook-logo"/>
                   <span className="text">Facebook</span>
                 </a>
               </li>
@@ -76,18 +76,18 @@ const Footer = () => {
         <div className="contentname4">
           <p>
             <img src={image} className="instapic" />
-            <a href='https://www.instagram.com/upes_dehradun/' className="link-no-underline">
+            <a href='https://www.instagram.com/upes_dehradun/' className="link-no-underline"  alt="Instagram-logo">
               <span className="text">Instagram</span>
             </a>
           </p>
           <p>
-            <img src={image1} className="instapic" />
+            <img src={image1} className="instapic"  alt="Twitter-logo" />
             <a href='https://twitter.com/UPESDehradun' className="link-no-underline">
               <span className="text">Twitter</span>
             </a>
           </p>
           <p>
-            <img src={image2} className="instapic" />
+            <img src={image2} className="instapic"  alt="Facebook-logo" />
             <a href='https://www.facebook.com/UPESddnuk/' className="link-no-underline">
               <span className="text">Facebook</span>
             </a>
