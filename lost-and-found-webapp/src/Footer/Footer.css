@@ -1,0 +1,216 @@
+/* Footer.css */
+
+.footer {
+  height: 50vh;
+  width: 100%;
+  background-color: purple;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.link-no-underline {
+  text-decoration: none;
+}
+
+.content p {
+  margin-right: 38px;
+}
+
+.nav-link {
+  color: white;
+}
+
+.instapic {
+  width: 30px;
+}
+
+.content {
+  padding: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
+
+.main-div {
+  position: relative;
+}
+
+.contentname1 {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px;
+}
+
+.contentname2 {
+  position: absolute;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  left: 475px;
+  top: -5px;
+}
+
+.navlinkhome {
+  color: white;
+}
+
+.contentname3 {
+  position: absolute;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  left: 750px;
+  top: -5px;
+}
+
+.contentname4 {
+  position: absolute;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  left: 1050px;
+  top: -5px;
+}
+
+.text {
+  color: white;
+  font-size: 12px;
+  font-family: poppins;
+  margin-left: 5px;
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 300px;
+    width: 100%;
+    height: 400px;
+    float: left;
+  }
+
+  .content {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  .content p:hover {
+    margin-top: 2px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+
+  /* Show dropdown only in mobile view */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    background-color: #070008; /* Dark purple color */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    color: violet;
+  }
+
+  .dropdown-menu li {
+    margin: 0;
+  }
+
+  .dropdown-menu li a {
+    display: block;
+    color: #fff; /* White text color */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 5px; /* Add padding to separate items */
+  }
+
+  .dropdown-menu li a:hover {
+    background-color: #7B1FA2; /* Darker shade of purple on hover */
+  }
+
+  /* Hide contentname sections in mobile view */
+  .contentname1 {
+    display: none;
+  }
+
+  .contentname2 {
+    display: none;
+  }
+
+  .contentname3 {
+    display: none;
+  }
+
+  .contentname4 {
+    display: none;
+  }
+}
+
+/* Dropdown styling */
+.dropdown-menu {
+  display: none;
+
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-item:hover .dropdown-menu {
+  display: block;
+  height: auto; /* Set height to auto to expand dropdown height */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+  background-color: #9C27B0; /* Dark purple color */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  min-height: 80px; /* Set a minimum height for the dropdown */
+  overflow: hidden; /* Add this line to hide the small purple box */
+}
+
+.dropdown-menu li {
+  margin: 0;
+  background-color: #070008;
+}
+
+.dropdown-menu li a {
+  display: block;
+  color: #fff; /* White text color */
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #7B1FA2; /* Darker shade of purple on hover */
+}
+
+.menu-item:hover .dropdown-menu {
+  display: block;
+}
+
+.menu-item:hover .dropdown-menu li a {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .menu-item:hover .dropdown-menu {
+    display: none;
+  }
+}
