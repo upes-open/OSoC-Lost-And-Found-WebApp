@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "./found.css";
-import image from "./bg.jpeg";
+// import image from "./bg.jpeg";
 import Switch from 'react-switch';
 
 const FoundUpload = () => {
