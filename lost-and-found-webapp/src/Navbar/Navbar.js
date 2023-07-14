@@ -125,7 +125,7 @@ const Navbar = () => {
                     )}
                   </li>
                   <li className="menu-item">
-                    <NavLink activeClassName="is-active" to="/about">
+                    <NavLink activeClassName="is-active" to="/items">
                       Items Gallery
                     </NavLink>
                   </li>
