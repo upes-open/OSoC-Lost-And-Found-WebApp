@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LostUpload from './lost-details-upload-page/LostUpload';
 import FoundUpload from './found-item-details-page/FoundUpload';
 
+
 const App = () => (
     <div>
 
@@ -25,8 +26,6 @@ const App = () => (
             </Routes>
             <GoToTop/>
         </Router>
-
-
     </div>
 
 );
