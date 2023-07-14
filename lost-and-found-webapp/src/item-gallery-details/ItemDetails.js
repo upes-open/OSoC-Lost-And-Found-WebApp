@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation} from 'react-router-dom';
 import './details.css'
 import image1 from './image1.jpg'
 import { Button } from '@mui/material';
@@ -41,7 +41,7 @@ const ItemDetails = () => {
                     </div>
 
                     <div class="info">
-                        <Button className="bt" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", borderRadius: "10px" }} variant="contained" color="secondary" component={Link} to='/claim'> Claim Item </Button>
+                        <Button className="bt" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", borderRadius: "10px" }} variant="contained" color="secondary" href='/claim'> Claim Item </Button>
                     </div>
                 </div>
 
