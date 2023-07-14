@@ -1,18 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
-@import url(http://fonts.googleapis.com/css?family=Laila:400,700);
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap');
 
-img{
+img {
     height: 200px;
     width: 280px;
     border-radius: 10px;
     padding: 5px;
 }
 
-.card-container{
-    display:flex;
+.card-container {
+    display: flex;
 }
 
-.cards-item{
+.cards-item {
     height: 200px;
     margin: 28px;
     box-shadow: 1px 1px 10px black;
@@ -22,7 +22,7 @@ img{
     position: relative;
 }
 
-.intro{
+.intro {
     height: 40px;
     width: 270px;
     padding: 6px;
@@ -30,45 +30,45 @@ img{
     margin-top: 5px;
     box-sizing: border-box;
     position: absolute;
-    background: rgb(27, 27,27,0.4);
-    color:white;
+    background: rgb(27, 27, 27, 0.4);
+    color: white;
     border-radius: 10px;
 }
 
-h2{
+h2 {
     padding-top: 0px;
     font-size: 20px;
     color: white;
-    font-family: 'Raleway', Arial, sans-serif;  
+    font-family: 'Raleway', Arial, sans-serif;
     display: flex;
     justify-content: center;
 }
 
-.button{
+.button {
     visibility: hidden;
     opacity: 0;
 }
 
-.cards-item:hover{
+.cards-item:hover {
     cursor: pointer;
 
 }
 
-.cards-item:hover .intro{
-    height: 90px; 
+.cards-item:hover .intro {
+    height: 90px;
 }
 
-.cards-item:hover .button{
-    opacity:1;
+.cards-item:hover .button {
+    opacity: 1;
     visibility: visible;
 }
 
 
-.h3{
-    font-size:40px;
+.h3 {
+    font-size: 35px;
     color: black;
     display: flex;
     justify-content: center;
-    font-family: 'Laila', sans-serif;
-    font-weight: bold; 
+    font-family: 'Merienda', cursive;
+    font-weight: bold;
 }
