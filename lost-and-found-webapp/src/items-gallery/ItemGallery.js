@@ -22,7 +22,7 @@ const ItemGallery = () => {
                 <h3 className="h3">Items Gallery</h3>
             </div>
 
-            <div className="d-flex flex-wrap" >
+            <div className="d-flex flex-wrap justify-content-center" >
                 {Items.map((item) => (
                     <div className="card-container">
                         <div className="cards-item">

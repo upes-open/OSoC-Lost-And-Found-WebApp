@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+@import url(http://fonts.googleapis.com/css?family=Laila:400,700);
 
 img{
     height: 200px;
@@ -13,7 +14,7 @@ img{
 
 .cards-item{
     height: 200px;
-    margin: 30px;
+    margin: 28px;
     box-shadow: 1px 1px 10px black;
     overflow: hidden;
     display: flex;
