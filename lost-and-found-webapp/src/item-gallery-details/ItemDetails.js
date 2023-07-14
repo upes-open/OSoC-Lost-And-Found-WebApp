@@ -1,14 +1,17 @@
 import React from 'react'
-import { useLocation} from 'react-router-dom';
+import { Link, useParams} from 'react-router-dom';
 import './details.css'
 import image1 from './image1.jpg'
 import { Button } from '@mui/material';
 
 const ItemDetails = () => {
-    const location = useLocation();
-    const searchParams = new URLSearchParams(location.search);
-    const id = searchParams.get('id');
+    // const location = useLocation();
+    // const searchParams = new URLSearchParams(location.search);
+    // const id = searchParams.get('id');
+    
+    const {id} = useParams();
 
+    
     const Items = [
 
         { id: 1, name: 'Item 1', description: 'Description 1', image: image1 },
@@ -41,7 +44,7 @@ const ItemDetails = () => {
                     </div>
 
                     <div class="info">
-                        <Button className="bt" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", borderRadius: "10px" }} variant="contained" color="secondary" href='/claim'> Claim Item </Button>
+                        <Button className="bt" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", borderRadius: "10px" }} variant="contained" color="secondary" component={Link} to='/claim'> Claim Item </Button>
                     </div>
                 </div>
 

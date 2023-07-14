@@ -22,7 +22,7 @@ const App = () => (
                 <Route exact path="/lost" element={<LostUpload />} />
                 <Route exact path="/found" element={<FoundUpload />} />
                 <Route exact path="/items" element={<ItemGallery />} />
-                <Route exact path="/details" element={<ItemDetails />} />
+                <Route exact path="/details/:id" element={<ItemDetails />} />
             </Routes>
             <GoToTop/>
         </Router>
