@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import "./lost.css"
-import image from "./bg.jpeg";
+import axios from 'axios';
+import './lost.css';
+import image from './bg.jpeg';
 
 const LostUpload = () => {
   const [description, setDescription] = useState('');
@@ -11,23 +12,45 @@ const LostUpload = () => {
   const [category, setCategory] = useState('');
   const [subcategory, setSubcategory] = useState('');
   const [itemName, setItemName] = useState('');
-  const [itemImage, setItemImage] = useState('');
+  const [itemImage, setItemImage] = useState(null);
   const [place, setPlace] = useState('');
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log({
-      description,
-      date,
-      phone,
-      name,
-      sapId,
-      category,
-      subcategory,
-      itemName,
-      itemImage,
-      place,
-    });
+
+    const formData = new FormData();
+    formData.append('description', description);
+    formData.append('date', date);
+    formData.append('phone', phone);
+    formData.append('name', name);
+    formData.append('sapId', sapId);
+    formData.append('category', category);
+    formData.append('subcategory', subcategory);
+    formData.append('itemName', itemName);
+    formData.append('itemImage', itemImage);
+    formData.append('place', place);
+
+    try {
+      await axios.post('http://localhost:5000/api/submitLostItem', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      // Reset form fields after successful submission
+      setDescription('');
+      setDate('');
+      setPhone('');
+      setName('');
+      setSapId('');
+      setCategory('');
+      setSubcategory('');
+      setItemName('');
+      setItemImage(null);
+      setPlace('');
+    } catch (error) {
+      console.log('Error submitting form:', error);
+    }
   };
 
   const handleCategoryChange = (e) => {
@@ -58,7 +81,7 @@ const LostUpload = () => {
           <select
             id="subcategory"
             value={subcategory}
-            className='pb-1 pt-2'
+            className="pb-1 pt-2"
             onChange={handleSubcategoryChange}
             required
           >
@@ -75,7 +98,7 @@ const LostUpload = () => {
           <select
             id="subcategory"
             value={subcategory}
-            className='pb-1 pt-2'
+            className="pb-1 pt-2"
             onChange={handleSubcategoryChange}
             required
           >
@@ -92,7 +115,7 @@ const LostUpload = () => {
           <select
             id="subcategory"
             value={subcategory}
-            className='pb-1 pt-2'
+            className="pb-1 pt-2"
             onChange={handleSubcategoryChange}
             required
           >
@@ -108,7 +131,7 @@ const LostUpload = () => {
         return (
           <select
             id="subcategory"
-            className='pb-1 pt-2'
+            className="pb-1 pt-2"
             value={subcategory}
             onChange={handleSubcategoryChange}
             required
@@ -132,7 +155,8 @@ const LostUpload = () => {
 
       <form onSubmit={handleFormSubmit}>
         <div className="col-5">
-          <label htmlFor="description">Description
+          <label htmlFor="description">
+            Description
             <input
               type="text"
               id="description"
@@ -145,7 +169,8 @@ const LostUpload = () => {
         </div>
 
         <div className="col-4">
-          <label htmlFor="date">Date
+          <label htmlFor="date">
+            Date
             <input
               type="date"
               id="date"
@@ -157,7 +182,8 @@ const LostUpload = () => {
         </div>
 
         <div className="col-3">
-          <label htmlFor="phone">Phone No.
+          <label htmlFor="phone">
+            Phone No.
             <input
               type="tel"
               id="phone"
@@ -170,7 +196,8 @@ const LostUpload = () => {
         </div>
 
         <div className="col-3">
-          <label htmlFor="name">Name
+          <label htmlFor="name">
+            Name
             <input
               type="text"
               id="name"
@@ -182,9 +209,9 @@ const LostUpload = () => {
           </label>
         </div>
 
-
         <div className="col-3">
-          <label htmlFor="sapId">SAP ID
+          <label htmlFor="sapId">
+            SAP ID
             <input
               type="text"
               id="sapId"
@@ -195,9 +222,12 @@ const LostUpload = () => {
             />
           </label>
         </div>
+
         <div className="col-3">
-          <label htmlFor="category">Category
-            <select className='pb-1 pt-2'
+          <label htmlFor="category">
+            Category
+            <select
+              className="pb-1 pt-2"
               id="category"
               value={category}
               onChange={handleCategoryChange}
@@ -214,7 +244,8 @@ const LostUpload = () => {
 
         {category && (
           <div className="col-3">
-            <label htmlFor="subcategory">Subcategory
+            <label htmlFor="subcategory">
+              Subcategory
               {renderSubcategoryOptions()}
             </label>
           </div>
@@ -222,11 +253,12 @@ const LostUpload = () => {
 
         {subcategory === 'other' && (
           <div className="col-3">
-            <label htmlFor="itemName">Name of Item
+            <label htmlFor="itemName">
+              Name of Item
               <input
                 type="text"
                 id="itemName"
-                style={{ marginTop: "22px", paddingBottom: "15px" }}
+                style={{ marginTop: '22px', paddingBottom: '15px' }}
                 value={itemName}
                 onChange={(e) => setItemName(e.target.value)}
                 required
@@ -236,34 +268,37 @@ const LostUpload = () => {
         )}
 
         <div className="col-3">
-          <label htmlFor="itemImage" type="file">Image
+          <label htmlFor="itemImage" type="file">
+            Image
             <div>
-              <input className='select pt-1'
+              <input
+                className="select pt-1"
                 type="file"
                 id="itemImage"
                 onChange={(e) => setItemImage(e.target.files[0])}
               />
             </div>
-
           </label>
         </div>
 
-
         <div className="col-3">
-          <label htmlFor="place">Place you Lost the Item
+          <label htmlFor="place">
+            Place you Lost the Item
             <input
               type="text"
               id="place"
-              placeholder='Enter the place you lost the item'
-              style={{ marginTop: "22px", paddingBottom: "15px" }}
+              placeholder="Enter the place you lost the item"
+              style={{ marginTop: '22px', paddingBottom: '15px' }}
               value={place}
               onChange={(e) => setPlace(e.target.value)}
             />
           </label>
         </div>
 
-        <div className='col-submit'>
-          <button type="submit" className="submitbtn" >Submit</button>
+        <div className="col-submit">
+          <button type="submit" className="submitbtn">
+            Submit
+          </button>
         </div>
       </form>
     </>
