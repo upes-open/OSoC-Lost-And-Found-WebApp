@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LostUpload from './lost-details-upload-page/LostUpload';
 import FoundUpload from './found-item-details-page/FoundUpload';
 import ItemGallery from './items-gallery/ItemGallery'
+import ItemDetails from "./item-gallery-details/ItemDetails";
 
 const App = () => (
     <div>
@@ -21,6 +22,7 @@ const App = () => (
                 <Route exact path="/lost" element={<LostUpload />} />
                 <Route exact path="/found" element={<FoundUpload />} />
                 <Route exact path="/items" element={<ItemGallery />} />
+                <Route exact path="/details" element={<ItemDetails />} />
             </Routes>
             <GoToTop/>
         </Router>

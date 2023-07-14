@@ -29,7 +29,7 @@ const ItemGallery = () => {
                             <img src={item.image} alt="items" />
                             <div className="intro">
                                 <h2>{item.name}</h2>
-                                <Button className="button" size="small" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", marginLeft: "15px", borderRadius: "10px" }} variant="contained" color="secondary" href="/details"> See Details </Button>
+                                <Button className="button" size="small" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", marginLeft: "15px", borderRadius: "10px" }} variant="contained" color="secondary" href={`/details?id=${item.id}`}> See Details </Button>
                                 <Button className="button" size="small" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", marginLeft: "40px", borderRadius: "10px", }} variant="contained" color="secondary" href="/claim"> Claim Item </Button>
 
                             </div>
