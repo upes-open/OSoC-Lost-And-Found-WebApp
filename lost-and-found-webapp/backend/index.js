@@ -11,7 +11,9 @@ app.use(cors())
 app.use(express.json()) 
 
 app.use('/feedback', require('./routes/feedback'))  
-
+app.get("/", (req, res) => {
+  res.status(200).send("<h1>OSOC Lost And Found WebApp</h1>")
+});
 app.listen(port, () => {
     console.log(`myNoteBook backend listening on port ${port}`)
   })
