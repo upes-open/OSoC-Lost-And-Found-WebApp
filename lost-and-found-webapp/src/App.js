@@ -2,19 +2,34 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 import "./App.css";
-import FeedbackForm from "./feedback/FeedbackForm";
+// import FeedbackForm from "./feedback/FeedbackForm";
 import Navbar from "./Navbar/Navbar";
 import HelpUs from "./help-us-find-page/HelpUs"
-import UserReg from "./UserReg-Page/UserReg-Page";
 
+
+import Home from "./home-page/Home"
+import GoToTop from "./go-to-top/GoToTop"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LostUpload from './lost-details-upload-page/LostUpload';
+import FoundUpload from './found-item-details-page/FoundUpload';
 
 const App = () => (
     <div>
-        {/* <Navbar /> */}
-        {/* <FeedbackForm /> */}
-        {/* <HelpUs/> */}
-        <UserReg />
+
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="/helpusfind" element={<HelpUs />} />
+                <Route exact path="/lost" element={<LostUpload />} />
+                <Route exact path="/found" element={<FoundUpload />} />
+            </Routes>
+            <GoToTop/>
+        </Router>
+
+
     </div>
+
 );
 
 
