@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap');
 
-img {
+.cards-item > img {
     height: 200px;
     width: 280px;
     border-radius: 10px;
@@ -35,7 +35,7 @@ img {
     border-radius: 10px;
 }
 
-h2 {
+.intro > h2 {
     padding-top: 0px;
     font-size: 20px;
     color: white;

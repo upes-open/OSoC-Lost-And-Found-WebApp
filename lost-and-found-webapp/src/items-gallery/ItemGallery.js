@@ -4,6 +4,7 @@ import image2 from "./sample/image2.jpg"
 import image3 from "./sample/image3.jpg"
 import './items.css'
 import { Button } from '@mui/material';
+import {Link} from 'react-router-dom';
 
 const ItemGallery = () => {
     const Items = [
@@ -29,7 +30,7 @@ const ItemGallery = () => {
                             <img src={item.image} alt="items" />
                             <div className="intro">
                                 <h2>{item.name}</h2>
-                                <Button className="button" size="small" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", marginLeft: "15px", borderRadius: "10px" }} variant="contained" color="secondary" href="/details"> See Details </Button>
+                                <Button className="button" size="small" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", marginLeft: "15px", borderRadius: "10px" }} variant="contained" color="secondary" component ={Link} to={`/details/${item.id}`}> See Details </Button>
                                 <Button className="button" size="small" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", marginLeft: "40px", borderRadius: "10px", }} variant="contained" color="secondary" href="/claim"> Claim Item </Button>
 
                             </div>
