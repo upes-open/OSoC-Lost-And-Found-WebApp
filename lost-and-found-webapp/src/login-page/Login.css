@@ -4,14 +4,20 @@
 }
 
 .banner  img{
-    display: inline-block;
-    width: 65vw;
+    width: 50vw;
     height: 50%;
     margin-top: 10rem;
+    /* border: 2px solid black; */
+  
 }
-/* .banner {
-    border: 2px solid black;
-} */
+.banner {
+    /* border: 2px solid black; */
+    background-color: #fffffd;
+    width: 240vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
 .login-form {
     display: inline-block;
     background-color: #f7f7f7;
@@ -19,6 +25,15 @@
     width: 100%;
     border: 2px solid #f7f7f7;
     box-shadow: 5px 5px 1px 1px #f7f7f7;
+}
+
+.check-btns {
+    display: flex;
+    justify-content: space-between
+}
+
+.forgot-link a{
+    text-decoration: none;
 }
 
 .submit-btn {
@@ -33,23 +48,23 @@
 }
 
 .alt {
-    margin-top: 3rem;
-    /* display: flex;
-    justify-content: center; */
+    margin-top: 1rem;
+}
+.alt p {
+    text-align: center;  
 }
 .alt-btns {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 1rem;
-    border: 2px solid black
 }
 
 .alt-btn1 {
     color: #415c91;
-   
-    /* margin-right: 3rem; */
+    font-size: 2rem;
+    margin-right: 2rem;
 }
 .alt-btn2 {
+    font-size: 2rem;
     color: #49a2ea;
-    margin-left: 3rem;
 }

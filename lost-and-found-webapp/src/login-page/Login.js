@@ -1,6 +1,6 @@
 import React from 'react'
 import './Login.css';
-import logo from './lost-and-found.jpg';
+import logo from './lost-and-found-service.jpeg';
 
 export default function Login() {
   return (
@@ -20,9 +20,14 @@ export default function Login() {
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" id="password" />
           </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="check1" />
-            <label class="form-check-label" for="check1">Remember me</label>
+          <div className='check-btns'>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="check1" />
+              <label class="form-check-label" for="check1">Remember me</label>
+            </div>
+            <div className='forgot-link'>
+              <a href='/'>Forgot Password?</a>
+            </div>
           </div>
           <button type="submit" class="submit-btn">Submit</button>
 
