@@ -75,8 +75,8 @@ const Footer = () => {
 
         <div className="contentname4">
           <p>
-            <img src={image} className="instapic" />
-            <a href='https://www.instagram.com/upes_dehradun/' className="link-no-underline"  alt="Instagram-logo">
+            <img src={image} className="instapic" alt="Instagram-logo" />
+            <a href='https://www.instagram.com/upes_dehradun/' className="link-no-underline"  >
               <span className="text">Instagram</span>
             </a>
           </p>
