@@ -18,18 +18,17 @@ import Login from "./login-page/Login";
 const App = () => (
     <div>
 
-        {/* <Router>
+        <Router>
             <Navbar />
             <Routes>
-                <Route exact path="/" element={<Home />} />
+                <Route exact path="/" element={<Login />} />
+                <Route exact path="/home" element={<Home />} />
                 <Route exact path="/helpusfind" element={<HelpUs />} />
                 <Route exact path="/lost" element={<LostUpload />} />
                 <Route exact path="/found" element={<FoundUpload />} />
             </Routes>
             <GoToTop/>
-        </Router> */}
-
-        <Login />
+        </Router>
 
     </div>
 

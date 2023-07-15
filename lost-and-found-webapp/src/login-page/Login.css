@@ -2,20 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap');
 .bdy {
-    /* display: flex;
-    justify-content: center; */
     background-color: #ffffff;
+    height: 85.5vh;
+    border: 2px solid #f5f5f5;
 }
 
 .banner {
     display: flex;
     justify-content: center;
     margin-top: 5rem;
-    /* border: 2px solid black; */
+
 }
 .banner-ad {
     margin-top: 6rem;
-    /* border: 2px solid black; */
 }
 .banner-ad .title {
     display: flex;
