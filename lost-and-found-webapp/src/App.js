@@ -9,6 +9,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LostUpload from './lost-details-upload-page/LostUpload';
 import FoundUpload from './found-item-details-page/FoundUpload';
 import ItemDetails from "./item-gallery-details/ItemDetails";
+import ItemGallery from "./items-gallery/ItemGallery";
+import CategorySelection from "./items-gallery/CategorySelection";
+import Login from "./login-page/Login"
 
 const App = () => (
     <div>
