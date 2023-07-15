@@ -9,8 +9,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LostUpload from './lost-details-upload-page/LostUpload';
 import FoundUpload from './found-item-details-page/FoundUpload';
 import ItemDetails from "./item-gallery-details/ItemDetails";
-import CategorySelection from "./items-gallery/CategorySelection";
-import ItemGallery from './items-gallery/ItemGallery'
 
 const App = () => (
     <div>
@@ -18,7 +16,8 @@ const App = () => (
         <Router>
             <Navbar />
             <Routes>
-                <Route exact path="/" element={<Home />} />
+                <Route exact path="/" element={<Login />} />
+                <Route exact path="/home" element={<Home />} />
                 <Route exact path="/helpusfind" element={<HelpUs />} />
                 <Route exact path="/lost" element={<LostUpload />} />
                 <Route exact path="/found" element={<FoundUpload />} />

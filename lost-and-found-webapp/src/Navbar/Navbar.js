@@ -90,7 +90,7 @@ const Navbar = () => {
               <nav className="main-nav">
                 <ul className="main-menu">
                   <li className="menu-item">
-                    <NavLink exact activeClassName="is-active" to="/">
+                    <NavLink exact activeClassName="is-active" to="/home">
                       Home
                     </NavLink>
                   </li>
