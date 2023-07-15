@@ -62,13 +62,3 @@
     opacity: 1;
     visibility: visible;
 }
-
-
-.h3 {
-    font-size: 35px;
-    color: black;
-    display: flex;
-    justify-content: center;
-    font-family: 'Merienda', cursive;
-    font-weight: bold;
-}

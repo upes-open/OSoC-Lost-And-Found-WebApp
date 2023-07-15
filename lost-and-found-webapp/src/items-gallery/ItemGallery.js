@@ -4,27 +4,29 @@ import image2 from "./sample/image2.jpg"
 import image3 from "./sample/image3.jpg"
 import './items.css'
 import { Button } from '@mui/material';
-import {Link} from 'react-router-dom';
+import { Link, useParams} from 'react-router-dom';
 
 const ItemGallery = () => {
+
+    const {category} = useParams();
     const Items = [
 
-        { id: 1, name: 'Item 1', description: 'Description 1', image: image1 },
-        { id: 2, name: 'Item 2', description: 'Description 2', image: image2 },
-        { id: 3, name: 'Item 3', description: 'Description 3', image: image3 },
-        { id: 3, name: 'Item 3', description: 'Description 3', image: image3 },
-        { id: 3, name: 'Item 3', description: 'Description 3', image: image3 },
-        { id: 3, name: 'Item 3', description: 'Description 3', image: image3 },
+        { id: 1, name: 'Item 1', description: 'Description 1', image: image1, category: "Book" },
+        { id: 2, name: 'Item 2', description: 'Description 2', image: image2, category: "Cards" },
+        { id: 3, name: 'Item 3', description: 'Description 3', image: image3, category: "Electronic Devices" },
+        { id: 3, name: 'Item 3', description: 'Description 3', image: image3,  category: "Others" },
+        { id: 3, name: 'Item 3', description: 'Description 3', image: image3,  category: "Books" },
+        { id: 3, name: 'Item 3', description: 'Description 3', image: image3,  category: "Cards" },
 
     ];
+
+    const filteredItems = category !== "All" ? Items.filter(item => item.category === category) : Items;
+
     return (
         <>
-            <div className='container'>
-                <h3 className="h3">Items Gallery</h3>
-            </div>
-
-            <div className="d-flex flex-wrap justify-content-center" >
-                {Items.map((item) => (
+        <h1 className='text-center'>Items Gallery - {category}</h1>
+            <div className="d-flex flex-wrap justify-content-center my-3" >
+                {filteredItems.map((item) => (
                     <div className="card-container">
                         <div className="cards-item">
                             <img src={item.image} alt="items" />
