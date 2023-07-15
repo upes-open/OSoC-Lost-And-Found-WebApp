@@ -1,73 +1,25 @@
 import React from 'react'
 import './Login.css';
-import logo from './lost-and-found-service.jpeg';
+import logo from './lostfound1.jpg';
+import { Button } from '@mui/material';
 
 export default function Login() {
   return (
     <div className='bdy'>
-    <div className='banner'>
-      <img src={logo} alt='logo' className='logo' />
-    </div>
-    <div className='login-form'>
-      <h1 className='login-title'>Login to continue</h1>
-      <div className='form'>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" />
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <div className='row'>
+        <div className='banner-ad col col-sm-6'>
+          <h2 className='title'><span style={{color:'#9C27B0'}}>Lost</span>  & <span>Found</span></h2>
+           <h1 className='title'>Welcome !</h1>
+           <p className="ps-5 mt-3" style={{ fontSize: "1rem",fontFamily: "'Poppins', sans-serif" }}>We help you find lost items and reunite them with their owners. Whether you've lost something valuable or found an item that belongs to someone else, we've got you covered. For more info you can checkout </p>
+          <div className='login-btn'>
+                <Button variant="contained" color="secondary" style={{ textTransform: "none", borderRadius: "10px", fontFamily: "'Poppins', sans-serif", fontSize: "1.1rem" }}>Login with Outlook</Button>
           </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" />
-          </div>
-          <div className='check-btns'>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="check1" />
-              <label class="form-check-label" for="check1">Remember me</label>
-            </div>
-            <div className='forgot-link'>
-              <a href='/'>Forgot Password?</a>
-            </div>
-          </div>
-          <button type="submit" class="submit-btn">Submit</button>
-
-          <div className="alt">
-            <p>Or login with</p>
-            <div className="alt-btns">
-              <button className="alt-btn1"><i class="fab fa-facebook"></i></button>
-              <button className="alt-btn2"><i class="fab fa-twitter"></i></button>
-          </div>
-          </div>
-
+        </div>
+        <div className='banner col col-sm-6'>
+        <img src={logo} alt='logo' className='logo' />
       </div>
     </div>
-
-{/* 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-10 banner">
-          <img src={logo} alt='logo' className='logo' />
-        </div>
-        <div class="col-sm-2 login-form">
-            <div class="mb-3">
-              <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" />
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password" />
-            </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="check1" />
-              <label class="form-check-label" for="check1">Remember me</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </div>
-    </div> */}
-
-
+   
 
     </div>
   )

@@ -1,70 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap');
 .bdy {
-    height: 100vh;
-    display: flex;
+    /* display: flex;
+    justify-content: center; */
+    background-color: #ffffff;
 }
 
-.banner  img{
-    width: 50vw;
-    height: 50%;
-    margin-top: 10rem;
-    /* border: 2px solid black; */
-  
-}
 .banner {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
     /* border: 2px solid black; */
-    background-color: #fffffd;
-    width: 240vw;
-    height: 100vh;
+}
+.banner-ad {
+    margin-top: 6rem;
+    /* border: 2px solid black; */
+}
+.banner-ad .title {
     display: flex;
     justify-content: center;
 }
-.login-form {
-    display: inline-block;
-    background-color: #f7f7f7;
-    padding: 5rem 1rem 1rem 1rem;
-    width: 100%;
-    border: 2px solid #f7f7f7;
-    box-shadow: 5px 5px 1px 1px #f7f7f7;
-}
 
-.check-btns {
-    display: flex;
-    justify-content: space-between
-}
-
-.forgot-link a{
-    text-decoration: none;
-}
-
-.submit-btn {
-    background-color: #6975d7;
-    border: 2px solid #6975d7;
-    margin-left: 2rem;
-    width: 90%;
-    color: #000;
-    cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 2px 2px 1px 1px #f7f7f7;
-}
-
-.alt {
-    margin-top: 1rem;
-}
-.alt p {
-    text-align: center;  
-}
-.alt-btns {
+.login-btn {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    font-family: 'Courier New', Courier, monospace;
 }
-
-.alt-btn1 {
-    color: #415c91;
-    font-size: 2rem;
-    margin-right: 2rem;
-}
-.alt-btn2 {
-    font-size: 2rem;
-    color: #49a2ea;
+.login-btn button {
+    background-color: #9C27B0;
+    outline: none;
 }
