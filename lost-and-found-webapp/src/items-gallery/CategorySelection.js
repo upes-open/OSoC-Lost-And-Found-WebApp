@@ -13,10 +13,10 @@ const CategorySelection = () => {
   const [hoveredCategory, setHoveredCategory] = useState(null);
 
   const categories = [
-    { name: 'Cards', image: cards, subcategories: ['College ID Card', 'ATM Card', "Driver's License", 'Aadhar Card'] },
-    { name: 'Books', image: books, subcategories: ['Notebooks/Registers', 'Book', 'Novel'] },
-    { name: 'Electronic Devices', image: devices, subcategories: ['Mobile Phones', 'Laptop', 'Smart Watch', 'Charger'] },
-    { name: 'Others', image: others, subcategories: ['Bottles', 'Wallets', 'Bags'] },
+    { name: 'Cards', image: cards, subcategories: ['College ID Card', 'ATM Card', "Driver's License", 'Aadhar Card', 'Any Other Card'] },
+    { name: 'Books', image: books, subcategories: ['Notebooks/Registers', 'Book', 'Novel', 'Any Other Book'] },
+    { name: 'Electronic Devices', image: devices, subcategories: ['Mobile Phones', 'Laptop', 'Smart Watch', 'Charger', 'Any Other Device'] },
+    { name: 'Others', image: others, subcategories: ['Bottles', 'Wallets', 'Bags', 'Any other Item'] },
   ];
 
   const handleSubcategorySelect = (subcategory) => {
