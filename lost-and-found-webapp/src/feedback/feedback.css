@@ -71,10 +71,6 @@ input#rate-5:checked ~ header:before{
 }
 
 
-p{
-    font-family: "Poppins", sans-serif;
-
-}
 
 .right{
     background-color:#fdfdfd;
@@ -86,6 +82,12 @@ p{
     width : 600px
 }
 
+#feedback{
+    width: 450px !important;
+    box-shadow: none !important;
+
+}
+
 
 @media(max-width: 600px)
 {
@@ -93,5 +95,15 @@ p{
         width:auto;
 
     }
+}
+
+.feedback-form{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+p, h6{
+    font-family: 'Poppins', sans-serif;
 }
 

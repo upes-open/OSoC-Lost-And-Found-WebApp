@@ -140,8 +140,8 @@ const Navbar = () => {
                     </NavLink>
                   </li>
                   <li className="menu-item">
-                    <NavLink activeClassName="is-active" to="/contact">
-                      Contact
+                    <NavLink activeClassName="is-active" to="/feedback">
+                      Feedback
                     </NavLink>
                   </li>
                 </ul>
