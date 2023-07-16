@@ -112,7 +112,6 @@
 .dropdown-menu li a {
   display: block;
   padding: 10px 20px;
-  color: #333;
   text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
