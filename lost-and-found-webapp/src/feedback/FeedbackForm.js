@@ -46,7 +46,7 @@ const FeedbackForm = () => {
                     InputProps={{
                       style: {
                         borderRadius: '10px',
-                        backgroundColor:"whitesmoke"
+                        // backgroundColor:"whitesmoke"
                       },
                     }} />
                 </div>
@@ -79,7 +79,7 @@ const FeedbackForm = () => {
                     InputProps={{
                       style: {
                         borderRadius: '20px',
-                        backgroundColor:"whitesmoke",
+                        // backgroundColor:"whitesmoke",
                       },
 
                     }} />
