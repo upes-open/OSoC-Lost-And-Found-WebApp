@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+.card-wrapper {
+    font-family: 'Laila', sans-serif;
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+.image > img {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding-top: 1rem;
+}
+
+img:hover {
+    opacity: 0.9;
+}
+
+.content {
+    padding: 2rem 1rem;
+}
+
+.content > .title {
+    font-size: 2.3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
+    left:0;
+    padding-top: 2rem;
+}
+
+.content > .title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+
+.detail > h2 {
+    text-transform: capitalize;
+    color: #12263a;
+    padding-top: 2rem;
+    font-size: 1.8rem;
+}
+
+.detail p {
+    font-size: 1 rem;
+}
+
+.detail ul li {
+    margin: 0;
+    list-style: none;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.detail ul li span{
+    font-weight: 400;
+    font-size: 1.5rem;
+    font-family: 'Cookie', cursive;
+}
+
+.bt{
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 992px){
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 5rem;
+    }
+    .image{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .content{
+        padding-top: 0;
+    }
+}

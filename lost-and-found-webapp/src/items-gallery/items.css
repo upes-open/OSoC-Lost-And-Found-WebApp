@@ -1,0 +1,64 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap');
+
+.cards-item > img {
+    height: 200px;
+    width: 280px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.card-container {
+    display: flex;
+}
+
+.cards-item {
+    height: 200px;
+    margin: 28px;
+    box-shadow: 1px 1px 10px black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.intro {
+    height: 40px;
+    width: 270px;
+    padding: 6px;
+    margin-left: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    position: absolute;
+    background: rgb(27, 27, 27, 0.4);
+    color: white;
+    border-radius: 10px;
+}
+
+.intro > h2 {
+    padding-top: 0px;
+    font-size: 20px;
+    color: white;
+    font-family: 'Raleway', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.cards-item:hover {
+    cursor: pointer;
+
+}
+
+.cards-item:hover .intro {
+    height: 90px;
+}
+
+.cards-item:hover .button {
+    opacity: 1;
+    visibility: visible;
+}

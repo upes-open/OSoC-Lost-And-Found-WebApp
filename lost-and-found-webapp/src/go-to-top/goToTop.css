@@ -1,0 +1,24 @@
+.top-btn{
+    font-size : 1.1rem;
+    width: 3rem;
+    height : 3rem;
+    color : #fff;
+    background-color: rgba(28, 78, 150, 0.9);
+    box-shadow: balck;
+    border-radius:50%;
+    position:fixed;
+    bottom:2rem;
+    right:2rem;
+    z-index:999; 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    transition: all 0.2s ease;
+
+;
+}
+
+.top-btn:hover{
+    transform: translateY(0.1rem);
+}

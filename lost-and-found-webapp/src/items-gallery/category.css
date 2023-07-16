@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@500&display=swap');
+
+h1 {
+    font-size: 30px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    font-family: 'Merienda', cursive;
+    font-weight: bold;
+}
+
+
+.category-blocks {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 80px;
+}
+
+.category-block {
+    width: 250px;
+    height: 250px;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Laila', sans-serif;
+    color: white;
+}
+
+
+.category-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(61, 57, 57, 0.5);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    align-items: center;
+}
+
+.subcategory-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+@media (max-width: 768px) {
+    .category-blocks {
+        flex-wrap: wrap;
+    }
+
+    .category-block {
+        width: 45%;
+        height: 180px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-blocks {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-block {
+        width: 80%;
+        height: 180px;
+        margin-bottom: 20px;
+    }
+}
