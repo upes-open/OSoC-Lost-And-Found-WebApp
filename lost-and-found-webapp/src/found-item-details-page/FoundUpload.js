@@ -132,10 +132,10 @@ const FoundUpload = () => {
               required
             >
               <option value="">Select category</option>
-              <option value="cards">Cards</option>
-              <option value="electronicDevices">Electronic Devices</option>
-              <option value="books">Books</option>
-              <option value="others">Others</option>
+              <option value="Cards">Cards</option>
+              <option value="Electronic Devices">Electronic Devices</option>
+              <option value="Books">Books</option>
+              <option value="Others">Others</option>
             </select>
           </label>
         </div>
@@ -152,11 +152,11 @@ const FoundUpload = () => {
                   required
                 >
                   <option value="">Select subcategory</option>
-                  <option value="collegeIDCard">College ID Card</option>
-                  <option value="ATMCard">ATM Card</option>
-                  <option value="driversLicense">Driver's License</option>
-                  <option value="aadharCard">Aadhar Card</option>
-                  <option value="other">Any other card</option>
+                  <option value="College ID Card">College ID Card</option>
+                  <option value="ATM Card">ATM Card</option>
+                  <option value="Driver's License">Driver's License</option>
+                  <option value="Aadhar Card">Aadhar Card</option>
+                  <option value="Any Other Card">Any other card</option>
                 </select>
               )}
 
@@ -169,11 +169,11 @@ const FoundUpload = () => {
                   required
                 >
                   <option value="">Select subcategory</option>
-                  <option value="mobilePhone">Mobile Phones</option>
-                  <option value="laptop">Laptop</option>
-                  <option value="smartWatch">Smart Watch</option>
-                  <option value="charger">Charger</option>
-                  <option value="other">Any other electronic device</option>
+                  <option value="Mobile Phone">Mobile Phones</option>
+                  <option value="Laptop">Laptop</option>
+                  <option value="Smart Watch">Smart Watch</option>
+                  <option value="Charger">Charger</option>
+                  <option value="Any Other Device">Any other electronic device</option>
                 </select>
               )}
 
@@ -186,10 +186,10 @@ const FoundUpload = () => {
                   required
                 >
                   <option value="">Select subcategory</option>
-                  <option value="notebook">Notebooks/Registers</option>
-                  <option value="book">Book</option>
-                  <option value="novel">Novel</option>
-                  <option value="other">Any other book</option>
+                  <option value="Notebook">Notebooks/Registers</option>
+                  <option value="Book">Book</option>
+                  <option value="Novel">Novel</option>
+                  <option value="Any Other Book">Any other book</option>
                 </select>
               )}
 
@@ -202,10 +202,10 @@ const FoundUpload = () => {
                   required
                 >
                   <option value="">Select subcategory</option>
-                  <option value="bottle">Bottles</option>
-                  <option value="wallet">Wallets</option>
-                  <option value="bag">Bags</option>
-                  <option value="other">Any other item</option>
+                  <option value="Bottles">Bottles</option>
+                  <option value="Wallets">Wallets</option>
+                  <option value="Bags">Bags</option>
+                  <option value="Any other item">Any other item</option>
                 </select>
               )}
             </label>
