@@ -12,6 +12,7 @@ import ItemDetails from "./item-gallery-details/ItemDetails";
 import ItemGallery from "./items-gallery/ItemGallery";
 import CategorySelection from "./items-gallery/CategorySelection";
 import Login from "./login-page/Login"
+import Faq from "./faq/Faq";
 
 const App = () => (
     <div>
@@ -28,6 +29,7 @@ const App = () => (
                 <Route exact path="/items" element={<CategorySelection />} />
                 <Route exact path="/items/:category" element={<ItemGallery />} />
                 <Route exact path="/details/:id" element={<ItemDetails />} />
+                <Route exact path="/faq" element={<Faq />} />
             </Routes>
             <GoToTop/>
         </Router>
