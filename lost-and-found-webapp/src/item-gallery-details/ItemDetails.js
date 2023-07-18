@@ -33,7 +33,7 @@ const ItemDetails = () => {
 
     const { id } = useParams();
     const item = Items.find(item => item._id === id);
-    
+
     return (
         <>
             {fetched &&
@@ -61,7 +61,8 @@ const ItemDetails = () => {
                         </div>
 
                     </div>
-                </div >)}
+                </div >
+            )}
         </>
     )
 }
