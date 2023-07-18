@@ -41,31 +41,3 @@ async function claimFoundItem(itemId) {
 
 //Enter Found Item ID here
 claimFoundItem('');
-
-
-
-async function getLostItems() {
-  const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
-  try {
-    // Connect to the MongoDB server
-    await client.connect();
-
-    // Get a reference to the database
-    const db = client.db(dbName);
-
-    // fetch all items from the 'lostItem' collection
-    const lostItems = await db.collection('lostItem').find({}).toArray();
-    // console.log(lostItems);
-    if (lostItems) {
-      return lostItems
-    }
-  } catch (error) {
-    console.error('Error occurred:', error);
-  } finally {
-    // Close the connection
-    client.close();
-  }
-}
-
-module.exports = {  getLostItems };
