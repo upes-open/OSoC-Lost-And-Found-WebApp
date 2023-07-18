@@ -19,18 +19,21 @@ app.get("/", (req, res) => {
   res.status(200).send("<h1>OSOC Lost And Found WebApp</h1>")
 });
 app.get("/lostItem", (req, res) => {
-  // const lostItems =  database.getLostItems();
-  // console.log(database.getLostItems());
+  // const lostItems = database.getLostItems();
+  // console.log(lostItems);
   const lostItems = new Promise((resolve, reject) => {
     database.getLostItems().then((result) => {
       if (result) {
+        console.log(result);
+        res.send(result)
         resolve(result);
       } else {
-        reject(new Error("No lost items found"));
+        reject(new Error("Items not found"));
+        res.send("Items not found")
       }
     });
-  });
-  res.send(lostItems);
+  })
+  // res.send(lostItems);
 });
 app.listen(port, () => {
     console.log(`myNoteBook backend listening on port ${port}`)

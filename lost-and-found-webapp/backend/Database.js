@@ -54,11 +54,9 @@ async function getLostItems() {
     // Get a reference to the database
     const db = client.db(dbName);
 
-    // Find the item in the 'foundItem' collection
-    // const foundItem = await db.collection('foundItem').findOne({ _id: new ObjectId(itemId) });
-
+    // fetch all items from the 'lostItem' collection
     const lostItems = await db.collection('lostItem').find({}).toArray();
-    console.log(lostItems);
+    // console.log(lostItems);
     if (lostItems) {
       return lostItems
     }
