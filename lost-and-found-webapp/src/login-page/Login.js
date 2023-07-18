@@ -8,7 +8,7 @@ export default function Login() {
     <div className='bdy'>
     <div className='row'>
         <div className='banner-ad col col-sm-6'>
-          <h2 className='title'><span style={{color:'#9C27B0'}}>Lost</span>  & <span>Found</span></h2>
+          <h2 className='title'><span style={{color:'#9C27B0'}}>Lost</span>  & <span className='found'>Found</span></h2>
            <h1 className='title'>Welcome !</h1>
           <div className='login-btn'>
                 <Button variant="contained" color="secondary" style={{ textTransform: "none", borderRadius: "10px", fontFamily: "'Poppins', sans-serif", fontSize: "1.1rem" }}>Login with Outlook</Button>
