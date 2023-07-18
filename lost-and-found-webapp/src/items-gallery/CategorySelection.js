@@ -14,9 +14,9 @@ const CategorySelection = () => {
 
   const categories = [
     { name: 'Cards', image: cards, subcategories: ['College ID Card', 'ATM Card', "Driver's License", 'Aadhar Card', 'Any Other Card'] },
-    { name: 'Books', image: books, subcategories: ['Notebooks/Registers', 'Book', 'Novel', 'Any Other Book'] },
-    { name: 'Electronic Devices', image: devices, subcategories: ['Mobile Phones', 'Laptop', 'Smart Watch', 'Charger', 'Any Other Device'] },
-    { name: 'Others', image: others, subcategories: ['Bottles', 'Wallets', 'Bags', 'Any other Item'] },
+    { name: 'Books', image: books, subcategories: ['Notebook', 'Book', 'Novel', 'Any Other Book'] },
+    { name: 'Electronic Devices', image: devices, subcategories: ['Mobile Phone', 'Laptop', 'Smart Watch', 'Charger', 'Any Other Device'] },
+    { name: 'Others', image: others, subcategories: ['Bottle', 'Wallet', 'Bag', 'Any other Item'] },
   ];
 
   const handleSubcategorySelect = (subcategory) => {

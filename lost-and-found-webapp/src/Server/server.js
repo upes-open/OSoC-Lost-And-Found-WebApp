@@ -1,3 +1,4 @@
+
 const express = require('express');
 const mongoose = require('mongoose');
 const multer = require('multer');
@@ -23,8 +24,8 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
-// Set up multer storage configuration for found items
-const foundItemStorage = multer.diskStorage({
+// Set up multer storage configuration
+const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, './foundItemImages');
   },
@@ -35,27 +36,12 @@ const foundItemStorage = multer.diskStorage({
   },
 });
 
-// Set up multer storage configuration for lost items
-const lostItemStorage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, './lostItemImages');
-  },
-  filename: (req, file, cb) => {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
-    const extname = path.extname(file.originalname);
-    cb(null, file.fieldname + '-' + uniqueSuffix + extname);
-  },
-});
+// Set up multer upload configuration
+const upload = multer({ storage });
 
-// Set up multer upload configuration for found items
-const foundItemUpload = multer({ storage: foundItemStorage });
-
-// Set up multer upload configuration for lost items
-const lostItemUpload = multer({ storage: lostItemStorage });
-
-// Define a schema for the found item form data
-const foundItemCollectionName = 'foundItem'; // Replace with your specific collection name
-const foundItemSchema = new mongoose.Schema(
+// Define a schema for the form data
+const collectionName = 'foundItem'; // Replace with your specific collection name
+const formDataSchema = new mongoose.Schema(
   {
     description: String,
     date: String,
@@ -66,52 +52,22 @@ const foundItemSchema = new mongoose.Schema(
     ownerName: String,
     details: String,
     isIdentifiable: Boolean,
-    itemImage: String,
+    itemImage: String, // Update the data type to store the image filename as a string
   },
-  { collection: foundItemCollectionName }
+  { collection: collectionName }
 );
 
-// Create a model for found items
-const FoundItem = mongoose.model('FoundItem', foundItemSchema, foundItemCollectionName);
+// Create a model based on the schema
+const FormData = mongoose.model('FormData', formDataSchema, collectionName);
 
-// Define a schema for the lost item form data
-const lostItemCollectionName = 'lostItem'; // Replace with your specific collection name
-const lostItemSchema = new mongoose.Schema(
-  {
-    description: String,
-    date: String,
-    phone: String,
-    name: String,
-    sapId: String,
-    category: String,
-    subcategory: String,
-    itemName: String,
-    itemImage: String,
-    place: String,
-  },
-  { collection: lostItemCollectionName }
-);
-
-// Create a model for lost items
-const LostItem = mongoose.model('LostItem', lostItemSchema, lostItemCollectionName);
-
-// Define the route to handle found item form submission with image upload
-app.post('/api/submitFoundItem', foundItemUpload.single('itemImage'), async (req, res) => {
+// Define the route to handle form submission with image upload
+app.post('/api/submitForm', upload.single('itemImage'), async (req, res) => {
   try {
-    const {
-      description,
-      date,
-      category,
-      subcategory,
-      itemName,
-      place,
-      ownerName,
-      details,
-      isIdentifiable,
-    } = req.body;
-    const itemImage = req.file.filename;
+    const { description, date, category, subcategory, itemName, place, ownerName, details, isIdentifiable } = req.body;
+    const itemImage = req.file.filename; // Use the filename property of the uploaded file
 
-    const foundItem = new FoundItem({
+    // Save the form data to MongoDB collection
+    const formData = new FormData({
       description,
       date,
       category,
@@ -123,46 +79,30 @@ app.post('/api/submitFoundItem', foundItemUpload.single('itemImage'), async (req
       isIdentifiable,
       itemImage,
     });
-    await foundItem.save();
+    await formData.save();
 
     res.sendStatus(200);
   } catch (error) {
-    console.error('Error submitting found item form:', error);
+    console.error('Error submitting form:', error);
     res.sendStatus(500);
   }
 });
 
-// Define the route to handle lost item form submission with image upload
-app.post('/api/submitLostItem', lostItemUpload.single('itemImage'), async (req, res) => {
+// fetch all items
+app.post('/getAllItems', async (req, res) => {
+
   try {
-    const { description, date, phone, name, sapId, category, subcategory, itemName, place } = req.body;
-    let itemImage = null;
-
-    if (req.file) {
-      itemImage = req.file.filename;
-    }
-
-    const lostItem = new LostItem({
-      description,
-      date,
-      phone,
-      name,
-      sapId,
-      category,
-      subcategory,
-      itemName,
-      itemImage,
-      place,
-    });
-    await lostItem.save();
-
-    res.sendStatus(200);
-  } catch (error) {
-    console.error('Error submitting lost item form:', error);
-    res.sendStatus(500);
+      let items = await FormData.find();
+      res.json(items);
   }
-});
+  catch (error) {
+      console.log("error", error);
+  }
 
+})
+
+// for fetching the images
+app.use('/foundItemImages', express.static(path.join(__dirname, 'foundItemImages')));
 
 // Start the server
 const port = process.env.PORT || 5000; // Choose the desired port for your server
