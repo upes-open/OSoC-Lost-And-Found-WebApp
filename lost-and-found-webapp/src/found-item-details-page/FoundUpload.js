@@ -143,7 +143,7 @@ const FoundUpload = () => {
         {category && (
           <div className="col-3">
             <label htmlFor="subcategory">Subcategory
-              {category === 'cards' && (
+              {category === 'Cards' && (
                 <select
                   id="subcategory"
                   value={subcategory}
@@ -156,11 +156,11 @@ const FoundUpload = () => {
                   <option value="ATM Card">ATM Card</option>
                   <option value="Driver's License">Driver's License</option>
                   <option value="Aadhar Card">Aadhar Card</option>
-                  <option value="Any Other Card">Any other card</option>
+                  <option value="Any other item">Any other card</option>
                 </select>
               )}
 
-              {category === 'electronicDevices' && (
+              {category === 'Electronic Devices' && (
                 <select
                   id="subcategory"
                   value={subcategory}
@@ -173,11 +173,11 @@ const FoundUpload = () => {
                   <option value="Laptop">Laptop</option>
                   <option value="Smart Watch">Smart Watch</option>
                   <option value="Charger">Charger</option>
-                  <option value="Any Other Device">Any other electronic device</option>
+                  <option value="Any other item">Any other electronic device</option>
                 </select>
               )}
 
-              {category === 'books' && (
+              {category === 'Books' && (
                 <select
                   id="subcategory"
                   value={subcategory}
@@ -189,11 +189,11 @@ const FoundUpload = () => {
                   <option value="Notebook">Notebooks/Registers</option>
                   <option value="Book">Book</option>
                   <option value="Novel">Novel</option>
-                  <option value="Any Other Book">Any other book</option>
+                  <option value="Any other item">Any other book</option>
                 </select>
               )}
 
-              {category === 'others' && (
+              {category === 'Others' && (
                 <select
                   id="subcategory"
                   className='pb-1 pt-2'
@@ -202,9 +202,9 @@ const FoundUpload = () => {
                   required
                 >
                   <option value="">Select subcategory</option>
-                  <option value="Bottles">Bottles</option>
-                  <option value="Wallets">Wallets</option>
-                  <option value="Bags">Bags</option>
+                  <option value="Bottle">Bottles</option>
+                  <option value="Wallet">Wallets</option>
+                  <option value="Bag">Bags</option>
                   <option value="Any other item">Any other item</option>
                 </select>
               )}
@@ -212,7 +212,7 @@ const FoundUpload = () => {
           </div>
         )}
 
-        {subcategory === 'other' && (
+        {subcategory === 'Any other item' && (
           <div className="col-3">
             <label htmlFor="itemName">Name of Item
               <input

@@ -128,9 +128,6 @@ button.submitbtn:hover {
 }
 
 button.submitbtn:active {
-  height: 34px;
-  border-bottom: 0;
-  margin: 1px 0 0 0;
   background-image: -moz-linear-gradient(#7a4a9e, #8b59b9);
   background-image: -webkit-linear-gradient(#7a4a9e, #8b59b9);
   background-image: linear-gradient(#7a4a9e, #8b59b9);
