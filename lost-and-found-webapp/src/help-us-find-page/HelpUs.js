@@ -1,45 +1,29 @@
-import React, { useEffect} from 'react';
+import React, { useEffect, useState} from 'react';
 import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
-import image1 from "./sample/image1.jpg"
-import image2 from "./sample/image2.jpg"
+
 import "./helpUs.css"
 import no_image from "./no-image.png";
 
 const HelpUs = () => {
 
-  // const [lostItems, setLostItems] = useState([]);
+  const [lostItems, setLostItems] = useState([]);
 
   // Fetch data from Lost Items DB
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch('/api/lost-items');
-  //       const data = await response.json();
-  //       setLostItems(data);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:3002/lostItem');
+        const data = await response.json();
+        console.log(data);
+        setLostItems(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-  //   fetchData();
-  // }, []);
-
-  const lostItems = [
-
-    { id: 1, name: 'Item 1', description: 'Description 1', image: image1 },
-    { id: 2, name: 'Item 2', description: 'Description 2', image: image2 },
-    { id: 3, name: 'Item 3', description: 'Description 3', image: null },
-    { id: 4, name: 'Item 4', description: 'Description 4', image: image1 },
-    { id: 5, name: 'Item 5', description: 'Description 5', image: image2 },
-    { id: 3, name: 'Item 3', description: 'Description 3', image: null },
-    { id: 4, name: 'Item 4', description: 'Description 4', image: image1 },
-    { id: 5, name: 'Item 5', description: 'Description 5', image: image2 },
-    { id: 3, name: 'Item 3', description: 'Description 3', image: null },
-    { id: 4, name: 'Item 4', description: 'Description 4', image: image1 },
-    { id: 5, name: 'Item 5', description: 'Description 5', image: image2 },
-
-  ];
+    fetchData();
+  }, []);
 
   useEffect(() => {
     document.body.style.background = "linear-gradient(to right top, rgb(101 173 191), rgb(237 242 243))";
@@ -68,12 +52,12 @@ const HelpUs = () => {
 
             <CardContent >
               <Typography variant="h6" >
-                {item.name}
+                {item.subcategory}
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 {item.description}
               </Typography>
-              <Button size="small" style={{ fontFamily: "'Poppins', sans-serif", marginTop: "10px", borderRadius: "20px" }} variant="contained" color="secondary" href={`/report/${item.id}`}> REPORT AS FOUND </Button>
+              <Button size="small" style={{ fontFamily: "'Poppins', sans-serif", marginTop: "10px", borderRadius: "20px" }} variant="contained" color="secondary" href={'/found'}> REPORT AS FOUND </Button>
             </CardContent>
           </Card>
         ))}
