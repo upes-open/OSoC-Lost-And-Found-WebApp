@@ -72,7 +72,7 @@ const HelpUs = () => {
 
                 <CardContent >
                   <Typography variant="h6" >
-                    {item.name}
+                    {item.subcategory}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {item.description}
