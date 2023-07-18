@@ -1,11 +1,8 @@
 import React, { useEffect, useState} from 'react';
 import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
-// import image1 from "./sample/image1.jpg"
-// import image2 from "./sample/image2.jpg"
+
 import "./helpUs.css"
 import no_image from "./no-image.png";
-
-import axios from 'axios';
 
 const HelpUs = () => {
 
@@ -16,8 +13,9 @@ const HelpUs = () => {
 
     const fetchData = async () => {
       try {
-        const response = await axios('http://localhost:3002/lostItem');
+        const response = await fetch('http://localhost:3002/lostItem');
         const data = await response.json();
+        console.log(data);
         setLostItems(data);
       } catch (error) {
         console.log(error);
@@ -54,7 +52,7 @@ const HelpUs = () => {
 
             <CardContent >
               <Typography variant="h6" >
-                {item.name}
+                {item.subcategory}
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 {item.description}
