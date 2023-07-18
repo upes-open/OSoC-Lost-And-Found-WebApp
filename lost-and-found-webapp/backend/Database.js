@@ -18,14 +18,14 @@ async function claimFoundItem(itemId) {
     const db = client.db(dbName);
 
     // Find the item in the 'foundItem' collection
-    const foundItem = await db.collection('foundItem').findOne({ _id: new ObjectId(2) });
+    const foundItem = await db.collection('foundItem').findOne({ _id: new ObjectId(itemId) });
 
     if (foundItem) {
       // Insert the found item into the 'collectedItem' collection
       await db.collection('collectedItem').insertOne(foundItem);
 
       // Remove the item from the 'foundItem' collection
-      await db.collection('foundItem').deleteOne({ _id: new ObjectId(2) });
+      await db.collection('foundItem').deleteOne({ _id: new ObjectId(itemId) });
 
       console.log('Item claimed successfully.');
     } else {
