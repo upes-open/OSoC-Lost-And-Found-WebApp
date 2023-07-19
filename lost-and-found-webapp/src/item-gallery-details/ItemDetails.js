@@ -43,7 +43,7 @@ const ItemDetails = () => {
                             <img src={`${host}/foundItemImages/${item.itemImage}`} alt="item" />
                         </div>
                         <div class="content">
-                            <h2 class="title">{item.category}</h2>
+                            <h2 class="title">{item.subcategory}</h2>
 
                             <div class="detail">
                                 <h2>Description: </h2>
