@@ -9,6 +9,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+const CollectedItem = require('./models/collecteditem');
+
+
 // Set up MongoDB connection
 const MONGODB_URI = 'mongodb+srv://admin:helloadmin@lost-and-found.mczrz51.mongodb.net/LostandFound?retryWrites=true&w=majority'; // Replace with your MongoDB connection string
 mongoose.connect(MONGODB_URI, {
@@ -186,6 +189,60 @@ app.post('/getLostItems', async (req, res) => {
   }
 
 })
+
+//claiming id
+app.post('/claimItem/:id', async (req, res) => {
+  try {
+    const itemId = req.params.id;
+    const item = await FoundItem.findById(itemId);
+
+    if (!item) {
+      return res.status(404).json({ message: 'Item not found' });
+    }
+
+    const {
+      details,
+      name,
+      email,
+      sapId,
+      branch,
+      year,
+      contactNumber,
+    } = req.body;
+
+    // Create a new document in the CollectedItem collection with the item details and additional fields
+    const collectedItem = new CollectedItem({
+      description: item.description,
+      date: item.date,
+      category: item.category,
+      subcategory: item.subcategory,
+      itemName: item.itemName,
+      place: item.place,
+      ownerName: item.ownerName,
+      details: item.details,
+      isIdentifiable: item.isIdentifiable,
+      itemImage: item.itemImage,
+      details: req.body.details,
+      name: req.body.name,
+      email: req.body.email,
+      sapId: req.body.sapId,
+      branch: req.body.branch,
+      year: req.body.year,
+      contactNumber: req.body.contactNumber,
+    });
+
+    // Save the collected item
+    await collectedItem.save();
+
+    // Delete the item from the FoundItem collection
+    await FoundItem.findByIdAndDelete(itemId);
+
+    res.sendStatus(200);
+  } catch (error) {
+    console.error('Error claiming item:', error);
+    res.sendStatus(500);
+  }
+});
 
 
 // for fetching the images
