@@ -6,7 +6,6 @@ import loading from "./loading.gif";
 import { Link } from "react-router-dom";
 
 const HelpUs = () => {
-
   const [fetched, setFetched] = useState(false);
   const [lostItems, setItems] = useState([]);
   const host = "https://shiny-seal-loafers.cyclic.app";
@@ -38,7 +37,6 @@ const HelpUs = () => {
     fetchData();
   }, [url]);
 
-
   useEffect(() => {
     document.body.style.backgroundImage = "linear-gradient(to right top, rgb(101 173 191), rgb(237 242 243))";
     return () => {
@@ -47,12 +45,9 @@ const HelpUs = () => {
   }, []);
 
   return (
-
     <>
-
-
-      <div style={{ height: "100vh" }}>
-        <Typography variant="h4" className="gradient-text" style={{ textTransform: "none", }} align="center" >
+      <div style={{ minHeight: "calc(100vh - 150px)" }}>
+        <Typography variant="h4" className="gradient-text" style={{ textTransform: "none" }} align="center" >
           <span style={{ fontWeight: '600' }}>Help Us</span> Find
         </Typography>
 
@@ -61,7 +56,7 @@ const HelpUs = () => {
             <img src={loading} alt="loading" width="40px" />
           </div>
         ) :
-          (fetched  ?
+          (fetched ?
             (
               <div className="cards-container">
                 {lostItems.map((item) => (
