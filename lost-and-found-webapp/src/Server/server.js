@@ -244,11 +244,16 @@ app.post('/claimItem/:id', async (req, res) => {
   }
 });
 
+// feedback
+app.use('/feedback', require('./routes/feedback'))  
 
 // for fetching the images
 app.use('/foundItemImages', express.static(path.join(__dirname, 'foundItemImages')));
 app.use('/lostItemImages', express.static(path.join(__dirname, 'lostItemImages')));
 
+app.get("/", (req, res) => {
+  res.status(200).send("<h1>OSOC Lost And Found WebApp</h1>")
+});
 
 // Start the server
 const port = process.env.PORT || 5000; // Choose the desired port for your server

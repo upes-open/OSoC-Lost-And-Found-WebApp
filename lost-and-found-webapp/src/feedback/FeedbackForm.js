@@ -4,7 +4,7 @@ import { Button, TextField } from '@mui/material';
 
 const FeedbackForm = () => {
   const [details, setDetails] = React.useState({ email: "", feedback: "" });
-  const host = "http://localhost:3002";
+  const host = "https://shiny-seal-loafers.cyclic.app";
 
   const onChange = async (e) => {
     setDetails({ ...details, [e.target.name]: e.target.value })

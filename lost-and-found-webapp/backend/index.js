@@ -10,7 +10,7 @@ connectToMongo();
 app.use(cors())
 app.use(express.json()) 
 
-app.use('/feedback', require('./routes/feedback'))  
+app.use('/feedback', require('../src/Server/routes/feedback'))  
 app.get("/", (req, res) => {
   res.status(200).send("<h1>OSOC Lost And Found WebApp</h1>")
 });
