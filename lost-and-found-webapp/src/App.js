@@ -14,6 +14,7 @@ import ItemGallery from "./items-gallery/ItemGallery";
 import CategorySelection from "./items-gallery/CategorySelection";
 import Login from "./login-page/Login"
 import Faq from "./faq/Faq";
+import Footer from "../src/Footer/Footer"
 
 const App = () => (
     <div>
@@ -34,6 +35,7 @@ const App = () => (
                 <Route exact path="/faq" element={<Faq />} />
             </Routes>
             <GoToTop/>
+            <Footer/>
         </Router>
 
     </div>
