@@ -1,208 +1,137 @@
-/* Footer.css */
+.section__padding{
+  padding:4rem 4rem;
+}
 
-.footer {
-  height: 50vh;
+.footer{
+  background-color: purple; 
+  padding: 20px;
+}
+
+.sb__footer{
+  display: flex;
+  flex-direction: column;
+}
+
+.sb__footer-links{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
-  background-color: purple;
-  color: white;
-  padding: 0;
-  margin:0;
-
+  text-align: left;
+  margin-bottom: 2rem;
 }
 
-.content p{
-  margin-right: 38px;
+.sb__footer-links_div{
+  width: 150px;
+  margin: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  color: rgb(0, 0, 0);
 }
-nav-link{
-  color: white;
+
+a{
+  color: rgb(175, 175, 179);
+  text-decoration: none;
 }
-.instapic {
+.socialmedia{
+  display: flex;
+  flex-direction: row;
+}
+
+.socialmedia img{
   width: 30px;
 }
 
-.content {
-  padding: 50px;
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 20px;
-}
 
-.removeUnderline{
-  text-decoration: none;
-}
-
-.main-div {
-  position: relative;
-}
-
-.contentname1 {
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  margin-left: 200px;
-}
-
-.contentname2 {
-  position: absolute;
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  left: 475px;
-  top: -5px;
-}
-.navlinkhome{
+.sb__footer-links_div h4{
+  font-size: 15px;
+  line-height: 17px;
+  margin-bottom: 0.9rem;
   color: white;
 }
-.contentname3 {
-  position: absolute;
+.sb__footer-links_div p{
   font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  left: 750px;
-  top: -5px;
-}
-
-.contentname4 {
-  position: absolute;
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  left: 1050px;
-  top: -5px;
-}
-
-.text {
+  line-height: 15px;
+  margin: 0.5rem 0;
+  cursor: pointer;
   color: white;
-  font-size: 12px;
-  font-family: poppins;
-  margin-left: 5px;
 }
 
-.dropdownmenu {
-  display: none;
+.sb__footer-below{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.2rem;
 }
 
-@media (max-width: 768px) {
-  .footer {
-    /* margin-top: 300px; */
-    width: 100%;
-    height: auto;
-    float: left;
+.sb__footer-below-links{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.sb__footer-below-links p{
+  font-size: 13px;
+  line-height: 15px;
+  margin-left: 2rem;
+  color: rgb(206, 206, 206);
+  font-weight: 400;
+
+}
+
+hr{
+  color: white !important;
+  width: 100%;
+}
+
+.sb__footer-copyright p{
+  font-size: 13px;
+  line-height: 15px;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+
+}
+
+@media screen and (max-width: 850px){
+  .sb__footer-heading h1{
+    font-size: 44px;
+    line-height: 50px;
   }
-
-  .content {
-    padding: 80px;
-    display: flex;
+}
+@media screen and (max-width: 550px){
+  .sb__footer-heading h1{
+    font-size: 34px;
+    line-height: 42px;
+  }
+  .sb__footer-links div{
+    margin: 1rem 0;
+  }
+  .sb__footer-btn p{
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .sb__footer-below {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
+    justify-content: left;
+  }
+  .sb__footer-below-links {
+    flex-direction: column;
+  }
+  .sb__footer-below-links p{
+    margin-left: 0rem;
+    margin-top: 1rem;
   }
 
-  .content p:hover {
-    margin-top: 2px;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-
-  /* Show dropdown only in mobile view */
-  .dropdownmenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    padding: 0;
-    margin: 0;
-    background-color: #9C27B0; /* Dark purple color */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  }
-
-  .dropdownmenu li {
-    margin: 0;
-  }
-
-  .dropdownmenu li a {
-    display: block;
-    color: #fff; /* White text color */
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .dropdownmenu li a:hover {
-    background-color: #7B1FA2; /* Darker shade of purple on hover */
-  }
-  .dropdownmenu img {
-    width: 10px;
-  }
-
-  /* Hide contentname sections in mobile view */
-  .contentname1 {
-    display: none;
-  }
-
-  .contentname2 {
-    display: none;
-  }
-
-  .contentname3 {
-    display: none;
-  }
-
-  .contentname4 {
-    display: none;
-  }
-}
-/* Footer.css */
-
-/* ... previous CSS rules ... */
-
-/* Dropdown styling */
-.dropdownmenu {
-  display: none;
 }
 
-.menu-item {
-  position: relative;
-}
+@media screen and (max-width: 850px){
 
-.menu-item:hover .dropdownmenu {
-  display: block;
-}
-
-.dropdownmenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  padding: 0;
-  margin: 0;
-  background-color: #9C27B0; /* Dark purple color */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  width: 100px;
-}
-
-.dropdownmenu li {
-  margin: 0;
-}
-
-.dropdownmenu li a {
-  display: block;
-  color: #fff; /* White text color */
-  text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dropdownmenu li a:hover {
-  background-color: #7B1FA2; /* Darker shade of purple on hover */
-}
-
-.dropdownmenu img {
-  width: 10px;
-}
-
-@media (min-width: 768px) {
-  .menu-item:hover .dropdownmenu {
-    display: none;
+  .sb__footer-heading h1{
+    font-size: 27px;
+    line-height: 38px;
   }
+
 }
