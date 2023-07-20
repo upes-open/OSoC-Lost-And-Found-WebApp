@@ -24,4 +24,4 @@ yarn-error.log*
 
 /backend/node_modules
 /backend/.env
-
+src/Server/node_modules

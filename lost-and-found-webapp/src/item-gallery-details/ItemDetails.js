@@ -7,7 +7,7 @@ const ItemDetails = () => {
 
     const [fetched, setFetched] = useState(false);
     const [Items, setItems] = useState([]);
-    const host = "http://localhost:5000";
+    const host = "https://shiny-seal-loafers.cyclic.app";
 
     // API call
     const url = `${host}/getAllItems`;
@@ -33,7 +33,7 @@ const ItemDetails = () => {
 
     const { id } = useParams();
     const item = Items.find(item => item._id === id);
-    
+
     return (
         <>
             {fetched &&
@@ -43,7 +43,7 @@ const ItemDetails = () => {
                             <img src={`${host}/foundItemImages/${item.itemImage}`} alt="item" />
                         </div>
                         <div class="content">
-                            <h2 class="title">{item.category}</h2>
+                            <h2 class="title">{item.subcategory}</h2>
 
                             <div class="detail">
                                 <h2>Description: </h2>
@@ -61,7 +61,8 @@ const ItemDetails = () => {
                         </div>
 
                     </div>
-                </div >)}
+                </div >
+            )}
         </>
     )
 }

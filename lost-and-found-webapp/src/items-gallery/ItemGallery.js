@@ -1,13 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import './items.css'
-import { Button } from '@mui/material';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
 import { Link, useParams } from 'react-router-dom';
+// import loading from "./loading.gif";
 
 const ItemGallery = () => {
 
+    // const [spinner, setSpinner] = React.useState(true);
     const [Items, setItems] = useState([]);
+    const [open, setOpen] = useState(false);
+    const [selectedItemId, setSelectedItemId] = useState('');
+    const [details, setDetails] = useState('');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [sapId, setSapId] = useState('');
+    const [branch, setBranch] = useState('');
+    const [year, setYear] = useState('');
+    const [contactNumber, setContactNumber] = useState('');
     const { category } = useParams();
-    const host = "http://localhost:5000";
+    const host = "https://shiny-seal-loafers.cyclic.app";
 
     // API call
     const url = `${host}/getAllItems`;
@@ -27,6 +38,9 @@ const ItemGallery = () => {
             } catch (error) {
                 console.log(error.message);
             }
+            finally {
+                // setSpinner(false); // Hide the spinner after data is fetched
+            }
         }
         fetchData();
     }, [url]);
@@ -34,28 +48,180 @@ const ItemGallery = () => {
 
     const filteredItems = category ? Items.filter(item => item.subcategory === category) : Items;
 
-    return (
+    //handle claim
+    const handleClaimItem = (itemId) => {
+        setSelectedItemId(itemId);
+        setOpen(true);
+      };
+    
+      const handleClose = () => {
+        setOpen(false);
+        setSelectedItemId('');
+        setDetails('');
+        setName('');
+        setEmail('');
+        setSapId('');
+        setBranch('');
+        setYear('');
+        setContactNumber('');
+      };
+    
+      const handleSubmit = async () => {
+        try {
+          // Validate mandatory fields
+          if (!details || !name || !email || !sapId || !contactNumber) {
+            console.error('Mandatory fields are missing');
+            return;
+          }
+    
+          console.log('Claiming item:', selectedItemId);
+    
+          const response = await fetch(`${host}/claimItem/${selectedItemId}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              details,
+              name,
+              email,
+              sapId,
+              branch,
+              year,
+              contactNumber,
+            }),
+          });
+    
+          if (response.ok) {
+            console.log('Item claimed successfully');
+            // Show success alert or update UI
+          } else {
+            console.error('Failed to claim item');
+          }
+    
+          handleClose();
+        } catch (error) {
+          console.log(error.message);
+        }
+      };
+    
+      return (
         <>
-            <h1 className='text-center'>Items Gallery - {category}</h1>
-            <div className="d-flex flex-wrap justify-content-center my-3" >
-
-                {filteredItems.map((item) => (
-                    <div className="card-container" key={item._id}>
-                        <div className="cards-item">
-                            <img src={`${host}/foundItemImages/${item.itemImage}`} alt="items" />
-                            <div className="intro">
-                                <h2>{item.date}</h2>
-                                <Button className="button" size="small" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", marginLeft: "15px", borderRadius: "10px" }} variant="contained" color="secondary" component={Link} to={`/details/${item._id}`}> See Details </Button>
-                                <Button className="button" size="small" style={{ textTransform: "none", fontFamily: "'Poppins', sans-serif", marginLeft: "40px", borderRadius: "10px", }} variant="contained" color="secondary" href="/claim"> Claim Item </Button>
-                            </div>
-                        </div>
-                    </div>
-                )
-                )}
-            </div>
-
+          <h1 className="text-center">Items Gallery - {category}</h1>
+          <div className="d-flex flex-wrap justify-content-center my-3">
+            {filteredItems.map((item) => (
+              <div className="card-container" key={item._id}>
+                <div className="cards-item">
+                  <img src={`${host}/foundItemImages/${item.itemImage}`} alt="items" />
+                  <div className="intro">
+                    <h2>{item.date}</h2>
+                    <Button
+                      className="button"
+                      size="small"
+                      style={{
+                        textTransform: 'none',
+                        fontFamily: "'Poppins', sans-serif",
+                        marginLeft: '15px',
+                        borderRadius: '10px',
+                      }}
+                      variant="contained"
+                      color="secondary"
+                      component={Link}
+                      to={`/details/${item._id}`}
+                    >
+                      See Details
+                    </Button>
+                    <Button
+                      className="button"
+                      size="small"
+                      style={{
+                        textTransform: 'none',
+                        fontFamily: "'Poppins', sans-serif",
+                        marginLeft: '40px',
+                        borderRadius: '10px',
+                      }}
+                      variant="contained"
+                      color="secondary"
+                      onClick={() => handleClaimItem(item._id)}
+                    >
+                      Claim Item
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+    
+          <Dialog open={open} onClose={handleClose}>
+            <DialogTitle>Enter Your Details</DialogTitle>
+            <DialogContent>
+              <TextField
+                label="Details"
+                value={details}
+                onChange={(e) => setDetails(e.target.value)}
+                multiline
+                rows={4}
+                required
+                fullWidth
+                margin="normal"
+              />
+              <TextField
+                label="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                fullWidth
+                margin="normal"
+              />
+              <TextField
+                label="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                fullWidth
+                margin="normal"
+              />
+              <TextField
+                label="SAP ID"
+                value={sapId}
+                onChange={(e) => setSapId(e.target.value)}
+                required
+                fullWidth
+                margin="normal"
+              />
+              <TextField
+                label="Branch"
+                value={branch}
+                onChange={(e) => setBranch(e.target.value)}
+                fullWidth
+                margin="normal"
+              />
+              <TextField
+                label="Year"
+                value={year}
+                onChange={(e) => setYear(e.target.value)}
+                fullWidth
+                margin="normal"
+              />
+              <TextField
+                label="Contact Number"
+                value={contactNumber}
+                onChange={(e) => setContactNumber(e.target.value)}
+                required
+                fullWidth
+                margin="normal"
+              />
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleClose}>Cancel</Button>
+              <Button onClick={handleSubmit} variant="contained" color="primary">
+                Claim
+              </Button>
+            </DialogActions>
+          </Dialog>
         </>
-    )
-}
-
-export default ItemGallery
+      );
+    };
+    
+    export default ItemGallery;
+    
