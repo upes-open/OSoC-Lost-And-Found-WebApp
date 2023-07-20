@@ -18,7 +18,7 @@ const ItemGallery = () => {
     const [year, setYear] = useState('');
     const [contactNumber, setContactNumber] = useState('');
     const { category } = useParams();
-    const host = "http://localhost:5000";
+    const host = "https://misty-rose-hare.cyclic.app";
 
     // API call
     const url = `${host}/getAllItems`;
