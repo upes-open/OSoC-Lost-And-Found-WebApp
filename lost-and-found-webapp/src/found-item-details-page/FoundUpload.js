@@ -49,7 +49,7 @@ const FoundUpload = () => {
     formData.append('itemImage', itemImage);
 
     try {
-      await axios.post('https://misty-rose-hare.cyclic.app/api/submitFoundItem', formData, {
+      await axios.post('https://shiny-seal-loafers.cyclic.app/api/submitFoundItem', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

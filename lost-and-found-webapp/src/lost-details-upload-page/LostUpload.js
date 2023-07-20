@@ -31,7 +31,7 @@ const LostUpload = () => {
     formData.append('place', place);
 
     try {
-      await axios.post('https://misty-rose-hare.cyclic.app/api/submitLostItem', formData, {
+      await axios.post('https://shiny-seal-loafers.cyclic.app/api/submitLostItem', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

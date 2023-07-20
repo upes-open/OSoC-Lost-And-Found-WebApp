@@ -7,7 +7,7 @@ const ItemDetails = () => {
 
     const [fetched, setFetched] = useState(false);
     const [Items, setItems] = useState([]);
-    const host = "https://misty-rose-hare.cyclic.app";
+    const host = "https://shiny-seal-loafers.cyclic.app";
 
     // API call
     const url = `${host}/getAllItems`;

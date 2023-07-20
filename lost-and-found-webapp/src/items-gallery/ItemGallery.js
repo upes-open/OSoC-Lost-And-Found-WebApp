@@ -6,7 +6,7 @@ import { Link, useParams } from 'react-router-dom';
 
 const ItemGallery = () => {
 
-    const [spinner, setSpinner] = React.useState(true);
+    // const [spinner, setSpinner] = React.useState(true);
     const [Items, setItems] = useState([]);
     const [open, setOpen] = useState(false);
     const [selectedItemId, setSelectedItemId] = useState('');
@@ -18,7 +18,7 @@ const ItemGallery = () => {
     const [year, setYear] = useState('');
     const [contactNumber, setContactNumber] = useState('');
     const { category } = useParams();
-    const host = "https://misty-rose-hare.cyclic.app";
+    const host = "https://shiny-seal-loafers.cyclic.app";
 
     // API call
     const url = `${host}/getAllItems`;
@@ -39,7 +39,7 @@ const ItemGallery = () => {
                 console.log(error.message);
             }
             finally {
-                setSpinner(false); // Hide the spinner after data is fetched
+                // setSpinner(false); // Hide the spinner after data is fetched
             }
         }
         fetchData();

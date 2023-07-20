@@ -9,7 +9,7 @@ const HelpUs = () => {
 
   const [fetched, setFetched] = useState(false);
   const [lostItems, setItems] = useState([]);
-  const host = "https://misty-rose-hare.cyclic.app";
+  const host = "https://shiny-seal-loafers.cyclic.app";
   const [spinner, setSpinner] = React.useState(true);
 
   // API call
