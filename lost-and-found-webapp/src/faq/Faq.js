@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import './Faq.css'
 import image from "./bg.jpg";
 
-const Faq = () => {
+const Faq = (props) => {
 
     const faq = [
         { question: "How does the Lost and Found web app work?", answer: "Our Lost and Found web app provides a platform for users to report lost items and search for their missing possessions. Users can create a profile, submit details about their lost item, and browse through the found items listed on our platform. The app uses the entered details to identify potential matches and connect the owners with the finders." },
@@ -22,19 +22,26 @@ const Faq = () => {
     }
 
     useEffect(() => {
-        document.body.style.background = `url(${image}) `;
+
+        if(props.theme !== 'dark')
+        {
+            document.body.style.background = `url(${image}) `;
+        }
+        else{
+            document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image})`;
+        }
         // document.body.style.backgroundSize = 'cover';
         return () => {
             document.body.style.background = null;
         };
-    }, []);
+    }, [props.theme]);
 
     return (
         <div>
-            <section>
+            <section style={{color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}`, marginBottom: '150px'}}>
                 <h2 className='title my-4'>FAQs</h2>
 
-                <div style={{ backgroundColor: "whitesmoke", paddingLeft: "20px", borderRadius: "20px", paddingRight: "20px", paddingBottom: "50px", marginBottom:"50px"}}>
+                <div style={{ backgroundColor: `${props.theme === 'dark' ? '#333' : 'whitesmoke'}`, paddingLeft: "20px", borderRadius: "20px", paddingRight: "20px", paddingBottom: "50px", marginBottom:"50px"}}>
                     {faq.map((item, index) => (
                         <div key={index} onClick={() => handleIsClick(index)} className={`faq ${activeIndex === index ? 'active' : ''}`}>
                             <div className="question">

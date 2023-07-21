@@ -3,7 +3,7 @@ import './home.css';
 import image from './home1.png';
 import { Button } from '@mui/material';
 
-const HomePage = () => {
+const HomePage = (props) => {
 
   const [text, setText] = React.useState('Discover the Lost');
   const taglineArr = useMemo(() => ['Discover the Lost', 'Connect the Found'], []);
@@ -12,7 +12,7 @@ const HomePage = () => {
 
   useEffect(() => {
 
-    document.body.style.background = "black";
+    document.body.style.background = (props.theme === 'dark' ? '#333' : '#f5f5f5');
     const intervalId = setInterval(() => {
       setText(taglineArr[iRef.current]);
       iRef.current = (iRef.current + 1) % taglineArr.length;
@@ -23,13 +23,13 @@ const HomePage = () => {
       clearInterval(intervalId);
     };
 
-  }, [taglineArr]);
+  }, [taglineArr, props.theme]);
 
   return (
     <>
       <div style={{ height: "100vh" }}>
         <div className="container-fluid" >
-          <div className="row">
+          <div className="row" style={{color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}`}}>
             <div className="col-md-5 ps-5">
               <h1 className="display-3 pt-5 mt-5 ps-5"><span style={{ color: "#9C27B0" }}>hi, </span>Welcome!</h1>
               <p className="ps-5 respo changing-text" style={{ fontSize: "1.7rem", fontWeight: "bold", marginLeft: "80px" }}>{text} </p>

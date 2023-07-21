@@ -7,12 +7,20 @@
 .about-us {
   height: 100vh;
   width: 100%;
-  /* background-image: url(https://64.media.tumblr.com/c511d5d381e86fd9b28e23e776725ec0/e897974063953acf-24/s400x600/6e3087fff58bcde0008bf7a00f6cfe313215e22c.gif); */
   background: url("../images/about-bg.gif");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.about-us.dark-mode{
+  background: url("https://media.giphy.com/media/l0O9xuNakDBl7aVIQ/giphy.gif") !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
 
 
 
