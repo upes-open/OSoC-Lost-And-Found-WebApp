@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap');
+
 .bdy {
     background-color: #ffffff;
     height: 85.5vh;
-    border: 2px solid #f5f5f5;
+}
+
+.bdy.dark-mode {
+    background-color: #333 ;
 }
 
 .banner {
@@ -13,12 +17,15 @@
     margin-top: 5rem;
 
 }
-.found{
-    color:#9C27B0;
+
+.found {
+    color: #9C27B0;
 }
+
 .banner-ad {
     margin-top: 6rem;
 }
+
 .banner-ad .title {
     display: flex;
     justify-content: center;
@@ -31,6 +38,7 @@
     margin-top: 2rem;
     font-family: 'Courier New', Courier, monospace;
 }
+
 .login-btn button {
     background-color: #9C27B0;
     outline: none;
