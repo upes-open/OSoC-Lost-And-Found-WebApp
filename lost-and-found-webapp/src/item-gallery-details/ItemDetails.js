@@ -50,7 +50,7 @@ const ItemDetails = (props) => {
     return (
         <>
             {fetched &&
-                (<div className='card-wrapper' >
+                (<div className='card-wrapper' style={{ marginBottom: '150px'}}>
                     <div className="cards" >
                         <div className="image">
                             <img src={`${host}/foundItemImages/${item.itemImage}`} alt="item" />

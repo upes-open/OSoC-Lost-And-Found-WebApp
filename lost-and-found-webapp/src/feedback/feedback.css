@@ -109,7 +109,8 @@ input#rate-5:checked~header:before {
 .feedback-form {
     border: 0;
     padding: 0;
-    margin: 0;
+    margin-bottom: 100px;
+
 }
 
 .feedback-form.dark-mode {

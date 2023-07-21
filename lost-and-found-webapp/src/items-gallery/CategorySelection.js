@@ -49,7 +49,7 @@ const CategorySelection = (props) => {
 
   return (
     <>
-      <div className=''>
+      <div style={{ marginBottom: '150px'}}>
         <h1 className='text-center pt-5' style={{color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}`}}>Select A Category</h1>
         <div className="category-blocks">
           {categories.map((category) => (

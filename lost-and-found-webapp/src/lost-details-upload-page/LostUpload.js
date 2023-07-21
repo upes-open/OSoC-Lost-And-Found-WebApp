@@ -161,7 +161,7 @@ const LostUpload = (props) => {
     <>
       <h1 style={{color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}`}}>Lost Item details</h1>
 
-      <form style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`}} onSubmit={handleFormSubmit}>
+      <form style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}` , marginBottom: '150px'}} onSubmit={handleFormSubmit}>
         <div className="col-5">
           <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="description">
             Description

@@ -125,7 +125,7 @@ const ItemGallery = (props) => {
           <img src={loading} alt="loading" width="40px" />
         </div>
       }
-      <div className="d-flex flex-wrap justify-content-center my-3">
+      <div className="d-flex flex-wrap justify-content-center my-3" style={{ paddingBottom: '150px'}}>
         {filteredItems.map((item) => (
           <div className="card-container" key={item._id}>
             <div className="cards-item">

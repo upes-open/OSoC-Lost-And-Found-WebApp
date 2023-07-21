@@ -38,7 +38,7 @@ const Faq = (props) => {
 
     return (
         <div>
-            <section style={{color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}`,}}>
+            <section style={{color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}`, marginBottom: '150px'}}>
                 <h2 className='title my-4'>FAQs</h2>
 
                 <div style={{ backgroundColor: `${props.theme === 'dark' ? '#333' : 'whitesmoke'}`, paddingLeft: "20px", borderRadius: "20px", paddingRight: "20px", paddingBottom: "50px", marginBottom:"50px"}}>

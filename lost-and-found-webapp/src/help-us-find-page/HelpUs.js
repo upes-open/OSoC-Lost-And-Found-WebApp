@@ -43,7 +43,7 @@ const HelpUs = (props) => {
   useEffect(() => {
     if (props.theme === 'dark') {
       document.body.style.backgroundImage = `url(${dark})`;
-      document.body.style.backgroundSize = 'cover';
+      document.body.style.backgroundSize = 'contain';
     } else {
       document.body.style.backgroundImage = 'linear-gradient(to right top, rgb(101 173 191), rgb(237 242 243))';
     }
@@ -55,7 +55,7 @@ const HelpUs = (props) => {
   return (
 
     <>
-        <div style={{ height: "100vh"}}>
+        <div >
           <Typography variant="h4" className={`gradient-text ${props.theme === 'dark' ? 'dark-mode' : ''}`} style={{ textTransform: "none" }} align="center" >
             <span style={{ fontWeight: '600'}}>Help Us</span> Find
           </Typography>
