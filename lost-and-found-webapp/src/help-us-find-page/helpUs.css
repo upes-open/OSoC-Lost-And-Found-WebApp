@@ -30,6 +30,13 @@ h1 {
 .gradient-text {
     background: linear-gradient(to right, rgb(28, 26, 26), rgb(146, 142, 142));
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;   
+}
+
+.gradient-text.dark-mode {
+    background: linear-gradient(to right, rgb(241, 237, 237), rgb(165, 158, 158));
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    
 }
 

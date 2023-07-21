@@ -2,7 +2,7 @@ import React from 'react';
 import './feedback.css';
 import { Button, TextField } from '@mui/material';
 
-const FeedbackForm = () => {
+const FeedbackForm = (props) => {
   const [details, setDetails] = React.useState({ email: "", feedback: "" });
   const host = "https://shiny-seal-loafers.cyclic.app";
 
@@ -31,22 +31,22 @@ const FeedbackForm = () => {
 
   return (
     <>
-        <div className="body"></div>
+        <div className={`body ${props.theme === 'dark' ? 'dark-mode' : ''}`}></div>
           <div className="addnotes "  style={{ paddingTop: "50px" ,margin:"auto" }}>
-            <div className=" right ps-5 pe-5 pt-4 mb-5" >
+            <div className=" right ps-5 pe-5 pt-4 mb-5" style={{backgroundColor: `${props.theme === 'dark' ? '#333' : '#f5f5f5'}`, color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}`}}>
               <div className="d-flex justify-content-center mb-2">
                 <h3 style={{ fontWeight: "bold", fontFamily: '"Mons", sans-serif' }}>Feedback Form</h3>
               </div>
               <p className="mb-4 text-center">Thank you for taking your time to provide feedback. We appreciate hearing from you and will review your comments carefully.</p>
 
-              <form className="feedback-form" onSubmit={handleSubmit}>
+              <form className={`feedback-form ${props.theme === 'dark' ? 'dark-mode' : ''}`} onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <p className='container' style={{ marginBottom: "6px" }}>Email</p>
                   <TextField variant="outlined" color="secondary" type="email" onChange={onChange} value={details.email} placeholder='Email' id="email" name="email"
                     InputProps={{
                       style: {
                         borderRadius: '10px',
-                        // backgroundColor:"whitesmoke"
+                        color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}`,
                       },
                     }} />
                 </div>
@@ -79,7 +79,7 @@ const FeedbackForm = () => {
                     InputProps={{
                       style: {
                         borderRadius: '20px',
-                        // backgroundColor:"whitesmoke",
+                        color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}`,
                       },
 
                     }} />

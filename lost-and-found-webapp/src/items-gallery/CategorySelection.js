@@ -7,8 +7,9 @@ import devices from './main-category/devices.jpg';
 import cards from './main-category/cards.jpg';
 import others from './main-category/others.jpg';
 import image from './bg.jpg'
+import dark from './dark.jpg';
 
-const CategorySelection = () => {
+const CategorySelection = (props) => {
   const navigate = useNavigate();
   const [hoveredCategory, setHoveredCategory] = useState(null);
 
@@ -32,16 +33,24 @@ const CategorySelection = () => {
   };
 
   useEffect(() => {
-    document.body.style.background = `url(${image}) `;
-    document.body.style.backgroundSize = 'cover';
+    if (props.theme !== 'dark') {
+      document.body.style.background = `url(${image}) `;
+      document.body.style.backgroundSize = 'cover';
+    }
+    else {
+      document.body.style.background = `url(${dark}) `;
+      document.body.style.backgroundSize = 'cover';
+    }
+
     return () => {
       document.body.style.background = null;
     };
-  }, []);
+  }, [props.theme]);
+
   return (
     <>
       <div className=''>
-        <h1 className='text-center pt-5'>Select A Category</h1>
+        <h1 className='text-center pt-5' style={{color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}`}}>Select A Category</h1>
         <div className="category-blocks">
           {categories.map((category) => (
             <div

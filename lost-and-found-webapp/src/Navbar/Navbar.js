@@ -3,65 +3,18 @@ import { NavLink } from 'react-router-dom';
 import { FiChevronDown } from 'react-icons/fi';
 import logo from '../images/Logofornavbar.png';
 import './Navbar.css';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Switch from 'react-switch';
 
-const lightTheme = {
-  body: '#f5f5f5',
-  text: '#333',
-  navbarBackground: '#f5f5f5',
-  navbarText: '#333',
-};
-
-const darkTheme = {
-  body: '#333',
-  text: '#f5f5f5',
-  navbarBackground: '#333',
-  navbarText: '#f5f5f5',
-};
-
-const GlobalStyle = createGlobalStyle`
-    body {
-        background-color: ${({ theme }) => theme.body} !important;
-        color: ${({ theme }) => theme.text};
-    }
-
-    .header__middle {
-        background-color: ${({ theme }) => theme.navbarBackground};
-        color: ${({ theme }) => theme.navbarText};
-    }
-
-    .menu-item a {
-        color: ${({ theme }) => theme.navbarText};
-    }
-
-    .sub__menus {
-        background-color: ${({ theme }) => theme.navbarBackground};
-        color: ${({ theme }) => theme.navbarText};
-    }
-
-    .dropdown-menu {
-        background-color: ${({ theme }) => theme.navbarBackground};
-        color: ${({ theme }) => theme.navbarText};
-    }
-`;
-
-const Navbar = () => {
+const Navbar = (props) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const [theme, setTheme] = useState(lightTheme);
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
-  const toggleTheme = () => {
-    setTheme(theme === lightTheme ? darkTheme : lightTheme);
-  };
-
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <header className="header__middle">
+    <>
+      <div className={`header__middle ${props.theme === 'dark' ? 'dark-mode' : ''}`}>
         <div className="container">
           <div className="row">
             {/* Logo */}
@@ -70,14 +23,14 @@ const Navbar = () => {
                 <img src={logo} alt="logo" />
               </NavLink>
               <Switch
-                checked={theme === darkTheme}
-                onChange={toggleTheme}
+                checked={props.theme === 'dark'}
+                onChange={() => props.toggleTheme(props.theme)}
                 onColor="#2C3245"
                 offColor='#E1E2E2'
                 onHandleColor="#fff"
                 handleDiameter={10}
                 uncheckedIcon="🔆"
-                checkedIcon= "🌙"
+                checkedIcon="🌙"
                 height={25}
                 width={57}
                 className="theme-toggle-switch"
@@ -89,18 +42,18 @@ const Navbar = () => {
             <div className="header__middle__menus">
               <nav className="main-nav">
                 <ul className="main-menu">
-                  <li className="menu-item">
+                  <li className={`menu-item ${props.theme === 'dark' ? 'dark-mode' : ''}`}>
                     <NavLink exact activeClassName="is-active" to="/home">
                       Home
                     </NavLink>
                   </li>
-                  <li className="menu-item">
+                  <li className={`menu-item ${props.theme === 'dark' ? 'dark-mode' : ''}`}>
                     <NavLink activeClassName="is-active" to="/about">
                       About
                     </NavLink>
                   </li>
                   <li
-                    className="menu-item"
+                    className={`menu-item ${props.theme === 'dark' ? 'dark-mode' : ''}`}
                     onMouseEnter={toggleDropdown}
                     onMouseLeave={toggleDropdown}
                   >
@@ -109,7 +62,7 @@ const Navbar = () => {
                     </NavLink>
                     {isDropdownOpen && (
                       <div className="dropdown">
-                        <ul className="dropdown-menu">
+                        <ul className={`dropdown-menu ${props.theme === 'dark' ? 'dark-mode' : ''}`}>
                           <li>
                             <NavLink activeClassName="is-active" to="/found">
                               Report Found Item
@@ -124,22 +77,22 @@ const Navbar = () => {
                       </div>
                     )}
                   </li>
-                  <li className="menu-item">
+                  <li className={`menu-item ${props.theme === 'dark' ? 'dark-mode' : ''}`}>
                     <NavLink activeClassName="is-active" to="/items">
                       Items Gallery
                     </NavLink>
                   </li>
-                  <li className="menu-item">
+                  <li className={`menu-item ${props.theme === 'dark' ? 'dark-mode' : ''}`}>
                     <NavLink activeClassName="is-active" to="/helpusfind">
                       Help Us Find
                     </NavLink>
                   </li>
-                  <li className="menu-item">
+                  <li className={`menu-item ${props.theme === 'dark' ? 'dark-mode' : ''}`}>
                     <NavLink activeClassName="is-active" to="/faq">
                       FAQ
                     </NavLink>
                   </li>
-                  <li className="menu-item">
+                  <li className={`menu-item ${props.theme === 'dark' ? 'dark-mode' : ''}`}>
                     <NavLink activeClassName="is-active" to="/feedback">
                       Feedback
                     </NavLink>
@@ -149,8 +102,9 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </header>
-    </ThemeProvider>
+      </div>
+
+    </>
   );
 };
 
