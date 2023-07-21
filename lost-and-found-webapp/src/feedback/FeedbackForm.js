@@ -3,6 +3,21 @@ import './feedback.css';
 import { Button, TextField } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
+const CssTextField = styled(TextField)({
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: 'grey'
+    },
+    '&:hover fieldset': {
+      borderColor: 'grey',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: 'purple',
+    },
+
+  },
+}); 
+
 const FeedbackForm = (props) => {
   const [details, setDetails] = React.useState({ email: "", feedback: "" });
   const host = "https://shiny-seal-loafers.cyclic.app";
@@ -10,21 +25,6 @@ const FeedbackForm = (props) => {
   const onChange = async (e) => {
     setDetails({ ...details, [e.target.name]: e.target.value })
   }
-
-  const CssTextField = styled(TextField)({
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: `${props.theme === 'dark' ? 'grey' : '#333'}`,
-      },
-      '&:hover fieldset': {
-        borderColor: `${props.theme === 'dark' ? 'grey' : '#333'}`,
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: 'purple',
-      },
-      
-    },
-  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -57,13 +57,11 @@ const FeedbackForm = (props) => {
           <form className={`feedback-form ${props.theme === 'dark' ? 'dark-mode' : ''}`} onSubmit={handleSubmit}>
             <div className="mb-4">
               <p className='container' style={{ marginBottom: "6px" }}>Email</p>
-              <CssTextField variant="outlined" color="secondary" type="email" onChange={onChange} value={details.email} placeholder='Email' id="email" name="email"
-                InputProps={{
-                  style: {
-                    borderRadius: '10px',
-                    color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}`,
-                  },
-                }} />
+              {props.theme === 'dark' ? (
+                <CssTextField variant="outlined" color="secondary" type="email" onChange={onChange} value={details.email} placeholder='Email' id="email" name="email" InputProps={{ style: { borderRadius: '10px', color: '#f5f5f5', } }} />
+              ) : (
+                <TextField variant="outlined" color="secondary" type="email" onChange={onChange} value={details.email} placeholder='Email' id="email" name="email" InputProps={{ style: { borderRadius: '10px', color: '#333', } }} />
+              )}
             </div>
 
             <h6 className="container mt-4" style={{ marginBottom: "-1px" }}>How would you rate us?</h6>
@@ -89,16 +87,47 @@ const FeedbackForm = (props) => {
 
             <div className="my-3">
               <p className="container" style={{ marginBottom: "6px" }}>Please share your feedback</p>
-              <CssTextField type="text" placeholder='Share you experience or suggestions' multiline rows={5} onChange={onChange} value={details.feedback} id="feedback" name="feedback" color="secondary" variant="outlined" required
-
-                InputProps={{
-                  style: {
-                    borderRadius: '20px',
-                    color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}`,
-                    className: "change",
-                  },
-
-                }} />
+              {props.theme === 'dark' ? (
+    <CssTextField
+      type="text"
+      placeholder='Share you experience or suggestions'
+      multiline
+      rows={5}
+      onChange={onChange}
+      value={details.feedback}
+      id="feedback"
+      name="feedback"
+      color="secondary"
+      variant="outlined"
+      required
+      InputProps={{
+        style: {
+          borderRadius: '20px',
+          color: '#f5f5f5',
+        },
+      }}
+    />
+  ) : (
+    <TextField
+      type="text"
+      placeholder='Share you experience or suggestions'
+      multiline
+      rows={5}
+      onChange={onChange}
+      value={details.feedback}
+      id="feedback"
+      name="feedback"
+      color="secondary"
+      variant="outlined"
+      required
+      InputProps={{
+        style: {
+          borderRadius: '20px',
+          color: '#333',
+        },
+      }}
+    />
+  )}
 
             </div>
 
