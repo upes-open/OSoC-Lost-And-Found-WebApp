@@ -14,10 +14,31 @@ import ItemGallery from "./items-gallery/ItemGallery";
 import CategorySelection from "./items-gallery/CategorySelection";
 import Login from "./login-page/Login"
 import Faq from "./faq/Faq";
+import Footer from "../src/Footer/Footer"
 
 const App = () => {
 
+
     const [theme, setTheme] = useState('light');
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route exact path="/" element={<Login />} />
+                <Route exact path="/home" element={<Home />} />
+                <Route exact path="/about" element={<AboutUs />} />
+                <Route exact path="/helpusfind" element={<HelpUs />} />
+                <Route exact path="/lost" element={<LostUpload />} />
+                <Route exact path="/found" element={<FoundUpload />} />
+                <Route exact path="/feedback" element={<FeedbackForm />} />
+                <Route exact path="/items" element={<CategorySelection />} />
+                <Route exact path="/items/:category" element={<ItemGallery />} />
+                <Route exact path="/details/:id" element={<ItemDetails />} />
+                <Route exact path="/faq" element={<Faq />} />
+            </Routes>
+            <GoToTop/>
+            <Footer/>
+        </Router>
+
 
     const toggleTheme = (theme) => {
         setTheme(theme === 'light' ? 'dark' : 'light');

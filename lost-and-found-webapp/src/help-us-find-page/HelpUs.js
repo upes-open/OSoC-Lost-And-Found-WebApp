@@ -41,7 +41,6 @@ const HelpUs = (props) => {
     fetchData();
   }, [url]);
 
-
   useEffect(() => {
     if (props.theme === 'dark') {
       document.body.style.backgroundImage = `url(${dark})`;
@@ -55,29 +54,30 @@ const HelpUs = (props) => {
   }, [props.theme]);
 
   return (
-
     <>
-        <div style={{ height: "100vh"}}>
-          <Typography variant="h4" className={`gradient-text ${props.theme === 'dark' ? 'dark-mode' : ''}`} style={{ textTransform: "none" }} align="center" >
-            <span style={{ fontWeight: '600'}}>Help Us</span> Find
-          </Typography>
 
-          {spinner ? (
-            <div className='text-center my-5 pt-5' >
-              <img src={loading} alt="loading" width="40px" />
-            </div>
-          ) :
-            (fetched ?
-              (
-                <div className="cards-container">
-                  {lostItems.map((item) => (
-                    <Card key={item.id} className="card" style={{ backgroundColor: `${props.theme === 'dark' ? '#333' : 'whitesmoke'}` ,color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}` }} >
-                      <CardMedia
-                        component="img"
-                        height="150"
-                        image={item.itemImage ? `${host}/lostItemImages/${item.itemImage}` : no_image}
-                        alt={item.name}
-                      />
+
+      <div style={{ height: "100vh" }}>
+        <Typography variant="h4" className="gradient-text" style={{ textTransform: "none", }} align="center" >
+          <span style={{ fontWeight: '600' }}>Help Us</span> Find
+        </Typography>
+
+        {spinner ? (
+          <div className='text-center my-5 pt-5' >
+            <img src={loading} alt="loading" width="40px" />
+          </div>
+        ) :
+          (fetched  ?
+            (
+              <div className="cards-container">
+                {lostItems.map((item) => (
+                  <Card key={item.id} className="card" style={{ backgroundColor: "whitesmoke" }} >
+                    <CardMedia
+                      component="img"
+                      height="150"
+                      image={item.itemImage ? `${host}/lostItemImages/${item.itemImage}` : no_image}
+                      alt={item.name}
+                    />
 
                       <CardContent >
                         <Typography variant="h6" >

@@ -33,7 +33,7 @@ const FeedbackForm = (props) => {
     <>
         <div className={`body ${props.theme === 'dark' ? 'dark-mode' : ''}`}></div>
           <div className="addnotes "  style={{ paddingTop: "50px" ,margin:"auto" }}>
-            <div className=" right ps-5 pe-5 pt-4 mb-5" style={{backgroundColor: `${props.theme === 'dark' ? '#333' : '#f5f5f5'}`, color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}`}}>
+            <div className=" right ps-5 pe-5 pt-4 mb-5" style={{backgroundColor: `${props.theme === 'dark' ? '#333' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}`}}>
               <div className="d-flex justify-content-center mb-2">
                 <h3 style={{ fontWeight: "bold", fontFamily: '"Mons", sans-serif' }}>Feedback Form</h3>
               </div>
