@@ -4,6 +4,7 @@ import { FiChevronDown } from 'react-icons/fi';
 import logo from '../images/Logofornavbar.png';
 import './Navbar.css';
 import Switch from 'react-switch';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Navbar = (props) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -26,7 +27,7 @@ const Navbar = (props) => {
                 checked={props.theme === 'dark'}
                 onChange={() => props.toggleTheme(props.theme)}
                 onColor="#2C3245"
-                offColor='#E1E2E2'
+                offColor="#E1E2E2"
                 onHandleColor="#fff"
                 handleDiameter={10}
                 uncheckedIcon="🔆"
@@ -36,12 +37,16 @@ const Navbar = (props) => {
                 className="theme-toggle-switch"
               />
             </div>
-            {/* icons={{ checked: , unchecked: "🔆" }} */}
 
-            {/* Nav Items */}
-            <div className="header__middle__menus">
+            {/* Hamburger Menu (Mobile View) */}
+            <div className="hamburger-menu" onClick={toggleDropdown}>
+              <GiHamburgerMenu />
+            </div>
+
+            {/* Nav Items (Desktop and Mobile View) */}
+            <div className={`header__middle__menus ${isDropdownOpen ? 'mobile-menu-open' : ''}`}>
               <nav className="main-nav">
-                <ul className="main-menu">
+                <ul className={`main-menu ${isDropdownOpen ? 'mobile-view' : ''}`}>
                   <li className={`menu-item ${props.theme === 'dark' ? 'dark-mode' : ''}`}>
                     <NavLink exact activeClassName="is-active" to="/home">
                       Home
@@ -103,7 +108,6 @@ const Navbar = (props) => {
           </div>
         </div>
       </div>
-
     </>
   );
 };

@@ -53,7 +53,7 @@
   transition: color 0.3s ease;
 }
 
-.menu-item.dark-mode a{
+.menu-item.dark-mode a {
   color: #f5f5f5;
 }
 
@@ -126,13 +126,77 @@
 }
 
 .header__middle.dark-mode {
-  background-color: #333 ;
-  color: #f5f5f5 ;
-
+  background-color: #333;
+  color: #f5f5f5;
 }
 
 .dropdown-menu.dark-mode {
-  background-color: #333 ;
-  color: #f5f5f5 ;
+  background-color: #333;
+  color: #f5f5f5;
+}
 
+/* Hamburger Menu (Mobile View) */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .header__middle__logo {
+    width: 35%;
+  }
+
+  .header__middle__menus {
+    display: none;
+    padding: 40px;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0; /* Hide the dropdown initially */
+    pointer-events: none; /* Disable pointer events to prevent interactions */
+    transition: opacity 0.3s ease; /* Add a transition for smooth effect */
+  }
+
+  .header__middle__menus.mobile-menu-open {
+    display: flex;
+    opacity: 1; /* Show the dropdown when open */
+    pointer-events: auto; /* Enable pointer events when open */
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .menu-item {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .menu-item a:hover {
+    color: #333;
+  }
+
+  /* Additional styles for mobile-view (Vertically align navbar items in the dropdown) */
+  .main-menu.mobile-view {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Smooth transition for the dropdown menu */
+  .dropdown-menu {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .menu-item:hover .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
