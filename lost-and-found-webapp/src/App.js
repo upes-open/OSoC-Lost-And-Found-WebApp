@@ -32,6 +32,7 @@ const App = () => (
                 <Route exact path="/items/:category" element={<ItemGallery />} />
                 <Route exact path="/details/:id" element={<ItemDetails />} />
                 <Route exact path="/faq" element={<Faq />} />
+
             </Routes>
             <GoToTop/>
         </Router>
