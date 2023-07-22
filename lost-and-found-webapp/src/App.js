@@ -18,7 +18,28 @@ import Footer from "../src/Footer/Footer"
 
 const App = () => {
 
+<<<<<<< HEAD
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route exact path="/" element={<Login />} />
+                <Route exact path="/home" element={<Home />} />
+                <Route exact path="/about" element={<AboutUs />} />
+                <Route exact path="/helpusfind" element={<HelpUs />} />
+                <Route exact path="/lost" element={<LostUpload />} />
+                <Route exact path="/found" element={<FoundUpload />} />
+                <Route exact path="/feedback" element={<FeedbackForm />} />
+                <Route exact path="/items" element={<CategorySelection />} />
+                <Route exact path="/items/:category" element={<ItemGallery />} />
+                <Route exact path="/details/:id" element={<ItemDetails />} />
+                <Route exact path="/faq" element={<Faq />} />
+
+            </Routes>
+            <GoToTop/>
+        </Router>
+=======
     const [theme, setTheme] = useState('light');
+>>>>>>> ca5efaf8e6baffa0570e7fbf04768c5a3a2f71fe
 
     const toggleTheme = (theme) => {
         setTheme(theme === 'light' ? 'dark' : 'light');
