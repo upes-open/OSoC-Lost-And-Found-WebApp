@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './lost.css';
 import image from './bg.jpeg';
+import dark from './darkbg.jpg';
 
-const LostUpload = () => {
+const LostUpload = (props) => {
   const [description, setDescription] = useState('');
   const [date, setDate] = useState('');
   const [phone, setPhone] = useState('');
@@ -31,7 +32,7 @@ const LostUpload = () => {
     formData.append('place', place);
 
     try {
-      await axios.post('http://localhost:5000/api/submitLostItem', formData, {
+      await axios.post('https://shiny-seal-loafers.cyclic.app/api/submitLostItem', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -67,18 +68,25 @@ const LostUpload = () => {
   };
 
   useEffect(() => {
-    document.body.style.background = `url(${image}) `;
-    document.body.style.backgroundSize = 'cover';
+    if (props.theme !== 'dark') {
+      document.body.style.background = `url(${image}) `;
+      document.body.style.backgroundSize = 'cover';
+    }
+    else {
+      document.body.style.background = `url(${dark}) `;
+      document.body.style.backgroundSize = 'cover';
+    }
+
     return () => {
       document.body.style.background = null;
     };
-  }, []);
+  }, [props.theme]);
 
   const renderSubcategoryOptions = () => {
     switch (category) {
-      case 'cards':
+      case 'Cards':
         return (
-          <select
+          <select style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
             id="subcategory"
             value={subcategory}
             className="pb-1 pt-2"
@@ -86,16 +94,16 @@ const LostUpload = () => {
             required
           >
             <option value="">Select subcategory</option>
-            <option value="collegeIDCard">College ID Card</option>
-            <option value="ATMCard">ATM Card</option>
-            <option value="driversLicense">Driver's License</option>
-            <option value="aadharCard">Aadhar Card</option>
+            <option value="College ID Card">College ID Card</option>
+            <option value="ATM Card">ATM Card</option>
+            <option value="Driver's License">Driver's License</option>
+            <option value="Aadhar Card">Aadhar Card</option>
             <option value="other">Any other card</option>
           </select>
         );
-      case 'electronicDevices':
+      case 'Electronic Devices':
         return (
-          <select
+          <select style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
             id="subcategory"
             value={subcategory}
             className="pb-1 pt-2"
@@ -103,16 +111,16 @@ const LostUpload = () => {
             required
           >
             <option value="">Select subcategory</option>
-            <option value="mobilePhone">Mobile Phones</option>
-            <option value="laptop">Laptop</option>
-            <option value="smartWatch">Smart Watch</option>
-            <option value="charger">Charger</option>
+            <option value="Mobile Phone">Mobile Phones</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Smart Watch">Smart Watch</option>
+            <option value="Charger">Charger</option>
             <option value="other">Any other electronic device</option>
           </select>
         );
-      case 'books':
+      case 'Books':
         return (
-          <select
+          <select style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
             id="subcategory"
             value={subcategory}
             className="pb-1 pt-2"
@@ -120,16 +128,16 @@ const LostUpload = () => {
             required
           >
             <option value="">Select subcategory</option>
-            <option value="notebook">Notebooks/Registers</option>
-            <option value="book">Book</option>
-            <option value="novel">Novel</option>
+            <option value="Notebook">Notebooks/Registers</option>
+            <option value="Book">Book</option>
+            <option value="Novel">Novel</option>
             <option value="other">Any other book</option>
           </select>
         );
 
-      case 'others':
+      case 'Others':
         return (
-          <select
+          <select style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
             id="subcategory"
             className="pb-1 pt-2"
             value={subcategory}
@@ -137,9 +145,9 @@ const LostUpload = () => {
             required
           >
             <option value="">Select subcategory</option>
-            <option value="bottle">Bottles</option>
-            <option value="wallet">Wallets</option>
-            <option value="bag">Bags</option>
+            <option value="Bottle">Bottles</option>
+            <option value="Wallet">Wallets</option>
+            <option value="Bag">Bags</option>
             <option value="other">Any other item</option>
           </select>
         );
@@ -151,13 +159,13 @@ const LostUpload = () => {
 
   return (
     <>
-      <h1>Lost Item details</h1>
+      <h1 style={{color: `${props.theme === 'dark' ? '#f5f5f5' : '#333'}`}}>Lost Item details</h1>
 
-      <form onSubmit={handleFormSubmit}>
+      <form style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}` , marginBottom: '150px'}} onSubmit={handleFormSubmit}>
         <div className="col-5">
-          <label htmlFor="description">
+          <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="description">
             Description
-            <input
+            <input style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
               type="text"
               id="description"
               value={description}
@@ -169,9 +177,9 @@ const LostUpload = () => {
         </div>
 
         <div className="col-4">
-          <label htmlFor="date">
+          <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="date">
             Date
-            <input
+            <input style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
               type="date"
               id="date"
               value={date}
@@ -182,9 +190,9 @@ const LostUpload = () => {
         </div>
 
         <div className="col-3">
-          <label htmlFor="phone">
+          <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="phone">
             Phone No.
-            <input
+            <input style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
               type="tel"
               id="phone"
               value={phone}
@@ -196,9 +204,9 @@ const LostUpload = () => {
         </div>
 
         <div className="col-3">
-          <label htmlFor="name">
+          <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="name">
             Name
-            <input
+            <input style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
               type="text"
               id="name"
               value={name}
@@ -210,9 +218,9 @@ const LostUpload = () => {
         </div>
 
         <div className="col-3">
-          <label htmlFor="sapId">
+          <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="sapId">
             SAP ID
-            <input
+            <input style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
               type="text"
               id="sapId"
               value={sapId}
@@ -224,9 +232,9 @@ const LostUpload = () => {
         </div>
 
         <div className="col-3">
-          <label htmlFor="category">
+          <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="category">
             Category
-            <select
+            <select style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
               className="pb-1 pt-2"
               id="category"
               value={category}
@@ -234,17 +242,17 @@ const LostUpload = () => {
               required
             >
               <option value="">Select category</option>
-              <option value="cards">Cards</option>
-              <option value="electronicDevices">Electronic Devices</option>
-              <option value="books">Books</option>
-              <option value="others">Others</option>
+              <option value="Cards">Cards</option>
+              <option value="Electronic Devices">Electronic Devices</option>
+              <option value="Books">Books</option>
+              <option value="Others">Others</option>
             </select>
           </label>
         </div>
 
         {category && (
           <div className="col-3">
-            <label htmlFor="subcategory">
+            <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="subcategory">
               Subcategory
               {renderSubcategoryOptions()}
             </label>
@@ -253,12 +261,12 @@ const LostUpload = () => {
 
         {subcategory === 'other' && (
           <div className="col-3">
-            <label htmlFor="itemName">
+            <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="itemName">
               Name of Item
-              <input
+              <input 
                 type="text"
                 id="itemName"
-                style={{ marginTop: '22px', paddingBottom: '15px' }}
+                style={{ marginTop: '22px', paddingBottom: '15px' , backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}}
                 value={itemName}
                 onChange={(e) => setItemName(e.target.value)}
                 required
@@ -268,10 +276,10 @@ const LostUpload = () => {
         )}
 
         <div className="col-3">
-          <label htmlFor="itemImage" type="file">
+          <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="itemImage" type="file">
             Image
             <div>
-              <input
+              <input style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
                 className="select pt-1"
                 type="file"
                 id="itemImage"
@@ -282,13 +290,13 @@ const LostUpload = () => {
         </div>
 
         <div className="col-3">
-          <label htmlFor="place">
+          <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="place">
             Place you Lost the Item
-            <input
+            <input 
               type="text"
               id="place"
               placeholder="Enter the place you lost the item"
-              style={{ marginTop: '22px', paddingBottom: '15px' }}
+              style={{ marginTop: '22px', paddingBottom: '15px' , backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}}
               value={place}
               onChange={(e) => setPlace(e.target.value)}
             />

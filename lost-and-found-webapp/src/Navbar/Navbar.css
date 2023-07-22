@@ -53,6 +53,10 @@
   transition: color 0.3s ease;
 }
 
+.menu-item.dark-mode a{
+  color: #f5f5f5;
+}
+
 .menu-item a:hover {
   color: #04b7f3;
 }
@@ -121,3 +125,14 @@
   color: #fff;
 }
 
+.header__middle.dark-mode {
+  background-color: #333 ;
+  color: #f5f5f5 ;
+
+}
+
+.dropdown-menu.dark-mode {
+  background-color: #333 ;
+  color: #f5f5f5 ;
+
+}

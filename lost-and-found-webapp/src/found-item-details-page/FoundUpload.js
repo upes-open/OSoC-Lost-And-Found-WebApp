@@ -3,8 +3,9 @@ import axios from 'axios';
 import "./found.css";
 import image from "./bg.jpeg";
 import Switch from 'react-switch';
+import dark from './darkbg.jpg';
 
-const FoundUpload = () => {
+const FoundUpload = (props) => {
   const [description, setDescription] = useState('');
   const [date, setDate] = useState('');
   const [category, setCategory] = useState('');
@@ -49,7 +50,7 @@ const FoundUpload = () => {
     formData.append('itemImage', itemImage);
 
     try {
-      await axios.post('http://localhost:5000/api/submitForm', formData, {
+      await axios.post('https://shiny-seal-loafers.cyclic.app/api/submitFoundItem', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -72,24 +73,32 @@ const FoundUpload = () => {
   };
 
   useEffect(() => {
-    document.body.style.background = `url(${image}) `;
-    document.body.style.backgroundSize = 'cover';
+    if (props.theme !== 'dark') {
+      document.body.style.background = `url(${image}) `;
+      document.body.style.backgroundSize = 'cover';
+    }
+    else {
+      document.body.style.background = `url(${dark}) `;
+      document.body.style.backgroundSize = 'cover';
+    }
+
     return () => {
       document.body.style.background = null;
     };
-  }, []);
+  }, [props.theme]);
 
   return (
     <>
-      <h1>Found Item details</h1>
+      <h1 style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}}>Found Item details</h1>
 
-      <form onSubmit={handleFormSubmit}>
-        <div className="col-5">
-          <label htmlFor="description">Description
+      <form style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, marginBottom: '150px'}} onSubmit={handleFormSubmit}>
+        <div className="col-5" >
+          <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="description" >Description
             <input
               type="text"
               id="description"
               value={description}
+              style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
               placeholder="Enter description of the item"
               onChange={(e) => setDescription(e.target.value)}
               required
@@ -98,11 +107,12 @@ const FoundUpload = () => {
         </div>
 
         <div className="col-4">
-          <label htmlFor="date">Date
+          <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="date">Date
             <input
               type="date"
               id="date"
               value={date}
+              style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
               onChange={(e) => setDate(e.target.value)}
               required
             />
@@ -110,12 +120,12 @@ const FoundUpload = () => {
         </div>
 
         <div className="col-3">
-          <label htmlFor="place">Place you Found the Item
+          <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="place">Place you Found the Item
             <input
               type="text"
               id="place"
               placeholder='Enter the place you found the item'
-              style={{ marginTop: "22px", paddingBottom: "15px" }}
+              style={{ marginTop: "22px", paddingBottom: "15px",backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`, }}
               value={place}
               onChange={(e) => setPlace(e.target.value)}
               required
@@ -124,10 +134,11 @@ const FoundUpload = () => {
         </div>
 
         <div className="col-3">
-          <label htmlFor="category">Category
+          <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="category">Category
             <select className='pb-1 pt-2'
               id="category"
               value={category}
+              style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
               onChange={handleCategoryChange}
               required
             >
@@ -142,12 +153,13 @@ const FoundUpload = () => {
 
         {category && (
           <div className="col-3">
-            <label htmlFor="subcategory">Subcategory
+            <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="subcategory">Subcategory
               {category === 'Cards' && (
                 <select
                   id="subcategory"
                   value={subcategory}
                   className='pb-1 pt-2'
+                  style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
                   onChange={handleSubcategoryChange}
                   required
                 >
@@ -165,6 +177,7 @@ const FoundUpload = () => {
                   id="subcategory"
                   value={subcategory}
                   className='pb-1 pt-2'
+                  style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
                   onChange={handleSubcategoryChange}
                   required
                 >
@@ -182,6 +195,7 @@ const FoundUpload = () => {
                   id="subcategory"
                   value={subcategory}
                   className='pb-1 pt-2'
+                  style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
                   onChange={handleSubcategoryChange}
                   required
                 >
@@ -198,6 +212,7 @@ const FoundUpload = () => {
                   id="subcategory"
                   className='pb-1 pt-2'
                   value={subcategory}
+                  style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
                   onChange={handleSubcategoryChange}
                   required
                 >
@@ -214,11 +229,11 @@ const FoundUpload = () => {
 
         {subcategory === 'Any other item' && (
           <div className="col-3">
-            <label htmlFor="itemName">Name of Item
+            <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="itemName">Name of Item
               <input
                 type="text"
                 id="itemName"
-                style={{ marginTop: "22px", paddingBottom: "15px" }}
+                style={{ marginTop: "22px", paddingBottom: "15px",backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`, }}
                 value={itemName}
                 onChange={(e) => setItemName(e.target.value)}
                 required
@@ -228,11 +243,12 @@ const FoundUpload = () => {
         )}
 
         <div className="col-3">
-          <label htmlFor="itemImage" type="file">Image
+          <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="itemImage" type="file">Image
             <div>
               <input className='select pt-1'
                 type="file"
                 id="itemImage"
+                style={{backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
                 onChange={(e) => setItemImage(e.target.files[0])}
                 required
               />
@@ -241,13 +257,14 @@ const FoundUpload = () => {
         </div>
 
         <div class="col-4">
-          <label>Item is Identifiable?
+          <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}}>Item is Identifiable?
             <center style={{ position: "relative", marginBottom: "8px", paddingTop: "10px" }}>
               <Switch
                 onChange={handleSwitchChange}
                 checked={isIdentifiable}
                 className="react-switch"
                 id="itemIdentifiableSwitch"
+                
               />
             </center>
           </label>
@@ -256,26 +273,27 @@ const FoundUpload = () => {
         {isIdentifiable && (
           <>
             <div className="col-3">
-              <label htmlFor="ownername">Owner Name
+              <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="ownername">Owner Name
                 <input
                   type="text"
                   id="ownerName"
                   value={ownerName}
                   placeholder="Enter owner name"
-                  style={{ marginTop: "22px", paddingBottom: "15px" }}
+                  style={{ marginTop: "22px", paddingBottom: "15px", backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`,}}
                   onChange={(e) => setOwnerName(e.target.value)}
+                  
                   required
                 />
               </label>
             </div>
 
             <div className="col-3">
-              <label htmlFor="anydetails">Any other details
+              <label style={{color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`}} htmlFor="anydetails">Any other details
                 <input
                   type="text"
                   id="anydetails"
                   placeholder='Enter any other details'
-                  style={{ marginTop: "22px", paddingBottom: "15px" }}
+                  style={{ marginTop: "22px", paddingBottom: "15px", backgroundColor: `${props.theme === 'dark' ? 'rgb(74 72 72)' : ''}`, color: `${props.theme === 'dark' ? '#f5f5f5' : ''}`, }}
                   value={details}
                   onChange={(e) => setDetails(e.target.value)}
                 />

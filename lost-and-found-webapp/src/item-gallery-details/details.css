@@ -43,6 +43,16 @@ img:hover {
     background: #12263a;
 }
 
+.content > .title.dark-mode::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #f3f5f7;
+}
+
 .detail > h2 {
     text-transform: capitalize;
     color: #12263a;
