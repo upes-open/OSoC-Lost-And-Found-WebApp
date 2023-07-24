@@ -10,6 +10,55 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 const CollectedItem = require('./models/collecteditem');
+const msal = require("@azure/msal-node")
+
+
+const config = {
+  auth: {
+    clientId: "0ab57f1a-6d44-4dfd-b784-55300e2d114b",
+    authority: "https://login.microsoftonline.com/91cc1fb6-1275-4acf-b3ea-c213ec16257b",
+    clientSecret: "cq.8Q~QbrklT5oJNppeit3zvRc7CnElxJghABaqaT",
+  },
+};
+
+const pca = new msal.ConfidentialClientApplication(config);
+
+const authCodeUrlParameters = {
+  scopes: ["user.read"], // Adjust the scope based on your requirements
+  redirectUri: "http://localhost:3000/", // Update this with your React app's redirect URI
+};
+
+app.get("/", (req, res) => {
+  // Redirect the user to the Azure AD login page
+  const authUrl = pca.getAuthCodeUrl(authCodeUrlParameters);
+  res.redirect(authUrl);
+});
+
+app.get("/auth-callback", async (req, res) => {
+  const tokenRequest = {
+    code: req.query.code,
+    scopes: ["user.read"], // Adjust the scope based on your requirements
+    redirectUri: "http://localhost:3000/", // Update this with your React app's redirect URI
+  };
+
+  try {
+    const response = await pca.acquireTokenByCode(tokenRequest);
+    console.log("Token acquired:", response.accessToken);
+    // Save the token or perform further actions here
+    res.redirect("/"); // Redirect to the homepage after successful login
+  } catch (error) {
+    console.log("Error during token acquisition:", error);
+    res.status(500).send("Error during token acquisition.");
+  }
+});
+///////////////
+
+
+
+
+
+
+
 
 
 // Set up MongoDB connection
