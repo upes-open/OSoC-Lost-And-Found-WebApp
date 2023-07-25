@@ -1,4 +1,4 @@
-import ".OSoC-Lost-And-Found-WebApp/lost-and-found-webapp/src/confirmation_page/page.css";
+import "./page.css";
 
 export default function page() {
   return (
