@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+
+.claim-page{
+    display: flex;
+    background: radial-gradient(263px at 100.2% 3%, rgb(12, 85, 141) 31.1%, rgb(205, 181, 93) 36.4%, rgb(244, 102, 90) 50.9%, rgb(199, 206, 187) 60.7%, rgb(249, 140, 69) 72.5%, rgb(12, 73, 116) 72.6%);
+    height: 100vh;
+}
+
+.claim-left{
+    flex:1;
+
+}
+
+.claim-heading{
+    text-align: center;
+    margin-top: 250px;
+    font-family: fantasy !important;
+    margin-bottom: 10px;
+    font-size: 50px;
+    color: white;
+}
+.claim-para{
+     text-align: center;
+     font-family: fantasy !important;
+     font-size: 25px;
+     font-weight: 100;
+     color: white;
+    }
+
+.claim-span{
+        color: chartreuse;
+        font-weight:900;
+        font-family: fantasy !important;
+        font-size: 25px;
+
+}
+.claim-right{
+    flex:1;
+}
+
+.claim-img{
+
+    border-radius: 50%;
+    margin-top: 150px;
+    margin-left: 130px;
+    width: 300px;
+    box-shadow: -4px -3px 11px 7px rgba(21, 56, 223, 0.1);
+    height: 300px;
+    position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+    .claim-img {
+      display: none;
+    }
+  } 
