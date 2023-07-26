@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
 import FeedbackForm from "./feedback/FeedbackForm";
 import Navbar from "./Navbar/Navbar";
 import HelpUs from "./help-us-find-page/HelpUs";
