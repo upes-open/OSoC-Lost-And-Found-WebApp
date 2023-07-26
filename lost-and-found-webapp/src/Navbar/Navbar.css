@@ -135,20 +135,32 @@
   color: #f5f5f5;
 }
 
+/* Other existing styles... */
+
 /* Hamburger Menu (Mobile View) */
 .hamburger-menu {
   display: none;
   cursor: pointer;
+  position: relative; /* Add this to allow proper stacking */
+  z-index: 1001; /* Higher z-index to keep the burger icon on top */
 }
 
+.close-icon {
+  display: none; /* Hide the close icon initially */
+  cursor: pointer;
+  position: relative; /* Add this to allow proper stacking */
+  z-index: 1001; /* Higher z-index to keep the close icon on top */
+}
+
+/* Mobile View Dropdown */
 @media (max-width: 768px) {
   .header__middle__logo {
-    width: 35%;
+    width: 50%;
   }
 
   .header__middle__menus {
     display: none;
-    padding: 40px;
+    padding: 30px;
     flex-direction: column;
     justify-content: flex-end;
     position: absolute;
@@ -173,6 +185,11 @@
     display: block;
   }
 
+  .close-icon {
+    display: block; /* Show the close icon when the dropdown is open */
+    margin-bottom: 20px;
+  }
+
   .menu-item {
     margin-left: 0;
     margin-bottom: 10px;
@@ -193,6 +210,45 @@
     transition: opacity 0.3s ease;
     opacity: 0;
     pointer-events: none;
+  }
+
+  .menu-item:hover .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Responsive styles for larger screens (tablet and desktop) */
+@media (min-width: 769px) {
+  .header__middle__logo {
+    width: 20%; /* Restore the logo size for larger screens */
+  }
+
+  .header__middle__menus {
+    justify-content: flex-end;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .menu-item {
+    margin-left: 20px;
+    margin-bottom: 0; /* Remove the margin-bottom for larger screens */
+  }
+
+  .main-menu.mobile-view {
+    display: flex; /* Restore the default horizontal layout for larger screens */
+  }
+
+  .menu-item a:hover {
+    color: #04b7f3;
+  }
+
+  .dropdown-menu {
+    position: static;
+    display: block;
+    box-shadow: none;
   }
 
   .menu-item:hover .dropdown-menu {
