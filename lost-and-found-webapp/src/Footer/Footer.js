@@ -3,6 +3,7 @@ import "./Footer.css";
 import fb from "../images/insta-logo.png";
 import twitter from "../images/twitter-logo.png";
 import insta from "../images/facebook-logo.png";
+import linkedin from "../images/linkedin-logo.png"
 const Footer = () => {
   return (
     <div className="footer">
@@ -35,19 +36,19 @@ const Footer = () => {
           <div className="sb__footer-links_div">
             <h4>Partners</h4>
             <a href="/about">
-              <p>UPES Open Community</p>
+              <a href="https://upes-open.org/"> <p>UPES Open Community</p></a>
             </a>
           </div>
           <div className="sb__footer-links_div">
             <h4>Feedback</h4>
             <a href="/resources">
-              <p>Email</p>
+              <a href="https://upes-open.org/contact" ><p>Email</p></a>
             </a>
             <a href="/resources">
-              <p>Contact Number</p>
+              <a href="https://upes-open.org/contact"><p>Contact Number</p></a> 
             </a>
             <a href="/resources">
-              <p>Visit Us</p>
+              <a href='https://www.upes.ac.in/'><p>Visit Us</p></a> 
             </a>
           </div>
           <div className="sb__footer-links_div">
@@ -56,6 +57,7 @@ const Footer = () => {
             <a href="https://www.instagram.com/upes_dehradun/"><p><img src={fb} alt="instaimage"/></p></a>
             <a href="https://twitter.com/UPESDehradun/"><p><img src={twitter} alt="twitterimage"/></p></a>
             <a href="https://www.facebook.com/UPESddnuk/"><p><img src={insta} alt="fbimage"/></p></a>
+            <a href="https://www.linkedin.com/company/open-community/"><p><img src={linkedin} alt="linkedinimage"/></p></a>
             </div>
           </div>
         </div>
