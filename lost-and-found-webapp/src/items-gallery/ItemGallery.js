@@ -7,6 +7,7 @@ import dark from './dark.jpg';
 
 const ItemGallery = (props) => {
 
+
   const [spinner, setSpinner] = React.useState(true);
   const [Items, setItems] = useState([]);
   const [open, setOpen] = useState(false);
@@ -106,7 +107,7 @@ const ItemGallery = (props) => {
 
       if (response.ok) {
         console.log('Item claimed successfully');
-        // Show success alert or update UI
+        props.func(true);
       } else {
         console.error('Failed to claim item');
       }

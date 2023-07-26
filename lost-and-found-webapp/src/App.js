@@ -16,6 +16,7 @@ import Login from "./login-page/Login";
 import Faq from "./faq/Faq";
 import Footer from "../src/Footer/Footer";
 import ProtectedRoute from './ProtectedRoute'; // Import the refactored ProtectedRoute component
+import Confirm from './confirmation_page/Confirm';
 
 import { MsalProvider, useMsal } from "@azure/msal-react";
 import { PublicClientApplication, LogLevel } from "@azure/msal-browser";
@@ -64,32 +65,42 @@ const App = () => {
     console.log(theme);
   };
 
+  const [showConfirmPage, setShowConfirmPage] = useState(false);
+
+  const showConfirm = (value) => {
+    setShowConfirmPage(value);
+  };
+
   return (
     <MsalProvider instance={new PublicClientApplication(msalConfig)}>
       <Router>
-        <Navbar toggleTheme={toggleTheme} theme={theme} />
-        <Routes>
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path="/login" element={<Login theme={theme} />} />
-          {/* Non-protected routes */}
-          <Route path="/about" element={<AboutUs theme={theme} />} />
-          <Route path="/faq" element={<Faq theme={theme} />} />
+        {showConfirmPage ?
+          <Confirm func={showConfirm} /> :
+          (<>
+            <Navbar toggleTheme={toggleTheme} theme={theme} />
+            <Routes>
+              <Route path="/" element={<Navigate to="/login" />} />
+              <Route path="/login" element={<Login theme={theme} />} />
+              {/* Non-protected routes */}
+              <Route path="/about" element={<AboutUs theme={theme} />} />
+              <Route path="/faq" element={<Faq theme={theme} />} />
 
-          {/* Protected routes */}
-          <Route path="/home" element={<ProtectedRoute><Home theme={theme} /></ProtectedRoute>} />
-          <Route path="/lost" element={<ProtectedRoute><LostUpload theme={theme} /></ProtectedRoute>} />
-          <Route path="/found" element={<ProtectedRoute><FoundUpload theme={theme} /></ProtectedRoute>} />
-          <Route path="/feedback" element={<ProtectedRoute><FeedbackForm theme={theme} /></ProtectedRoute>} />
-          <Route path="/items" element={<ProtectedRoute><CategorySelection theme={theme} /></ProtectedRoute>} />
-          <Route path="/items/:category" element={<ProtectedRoute><ItemGallery theme={theme} /></ProtectedRoute>} />
-          <Route path="/details/:id" element={<ProtectedRoute><ItemDetails theme={theme} /></ProtectedRoute>} />
-          <Route path="/helpusfind" element={<ProtectedRoute><HelpUs theme={theme} /></ProtectedRoute> }/>
+              {/* Protected routes */}
+              <Route path="/home" element={<ProtectedRoute><Home theme={theme} /></ProtectedRoute>} />
+              <Route path="/lost" element={<ProtectedRoute><LostUpload theme={theme} /></ProtectedRoute>} />
+              <Route path="/found" element={<ProtectedRoute><FoundUpload theme={theme} /></ProtectedRoute>} />
+              <Route path="/feedback" element={<ProtectedRoute><FeedbackForm theme={theme} /></ProtectedRoute>} />
+              <Route path="/items" element={<ProtectedRoute><CategorySelection theme={theme} /></ProtectedRoute>} />
+              <Route path="/items/:category" element={<ProtectedRoute><ItemGallery func={showConfirm} theme={theme} /></ProtectedRoute>} />
+              <Route path="/details/:id" element={<ProtectedRoute><ItemDetails func={showConfirm} theme={theme} /></ProtectedRoute>} />
+              <Route path="/helpusfind" element={<ProtectedRoute><HelpUs theme={theme} /></ProtectedRoute>} />
 
-          {/* Sign-out route */}
-          <Route path="/signout" element={<SignOut />} />
-        </Routes>
-        <GoToTop />
-        <Footer />
+              {/* Sign-out route */}
+              <Route path="/signout" element={<SignOut />} />
+            </Routes>
+            <GoToTop />
+            <Footer />
+          </>)}
       </Router>
     </MsalProvider>
   );
