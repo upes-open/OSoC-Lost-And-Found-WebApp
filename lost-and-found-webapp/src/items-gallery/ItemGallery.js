@@ -20,7 +20,7 @@ const ItemGallery = (props) => {
   const [year, setYear] = useState('');
   const [contactNumber, setContactNumber] = useState('');
   const { category } = useParams();
-  const host = "https://lost-and-found.app";
+  const host = "https://lost-and-found.cyclic.app";
 
   // API call
   const url = `${host}/getAllItems`;
@@ -36,7 +36,7 @@ const ItemGallery = (props) => {
         });
         const json = await response.json();
         setItems(json);
-        // console.log(json);
+        console.log(json);
       } catch (error) {
         console.log(error.message);
       }
