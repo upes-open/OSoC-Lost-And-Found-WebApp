@@ -18,7 +18,7 @@ const ItemDetails = (props) => {
     const [year, setYear] = useState('');
     const [contactNumber, setContactNumber] = useState('');
 
-    const host = "https://shiny-seal-loafers.cyclic.app";
+    const host = "https://lost-and-found.cyclic.app";
 
     // API call
     const url = `${host}/getAllItems`;

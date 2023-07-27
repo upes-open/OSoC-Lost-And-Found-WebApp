@@ -20,7 +20,7 @@ const ItemGallery = (props) => {
   const [year, setYear] = useState('');
   const [contactNumber, setContactNumber] = useState('');
   const { category } = useParams();
-  const host = "https://shiny-seal-loafers.cyclic.app";
+  const host = "https://lost-and-found.app";
 
   // API call
   const url = `${host}/getAllItems`;
