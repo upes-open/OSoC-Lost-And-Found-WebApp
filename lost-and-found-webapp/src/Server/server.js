@@ -39,7 +39,7 @@ app.get("/auth-callback", async (req, res) => {
     const response = await pca.acquireTokenByCode(tokenRequest);
     console.log("Token acquired:", response.accessToken);
     // Save the token or perform further actions here
-    res.redirect("/"); // Redirect to the homepage after successful login
+    res.redirect("/home"); // Redirect to the homepage after successful login
   } catch (error) {
     console.log("Error during token acquisition:", error);
     res.status(500).send("Error during token acquisition.");

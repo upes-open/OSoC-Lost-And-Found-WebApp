@@ -7,12 +7,12 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 
 export default function Login(props) {
   const { instance } = useMsal();
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Get the navigate function from useNavigate
 
   const handleLogin = async () => {
     try {
-      await instance.loginRedirect({
-        redirectUri: "https://osoc-lost-and-found-webapp.netlify.app/",
+      await instance.loginPopup({
+        redirectUri: "https://osoc-lost-and-found-webapp.netlify.app/", // Update this with the correct redirect URI
       });
 
       // After successful login, navigate to the home path
