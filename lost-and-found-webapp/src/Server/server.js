@@ -25,7 +25,7 @@ const pca = new msal.ConfidentialClientApplication(config);
 
 const authCodeUrlParameters = {
   scopes: ["user.read"], // Adjust the scope based on your requirements
-  redirectUri: "http://localhost:3000/", // Update this with your React app's redirect URI
+  redirectUri: "https://osoc-lost-and-found-webapp.netlify.app/", // Update this with your React app's redirect URI
 };
 
 app.get("/", (req, res) => {
@@ -38,7 +38,7 @@ app.get("/auth-callback", async (req, res) => {
   const tokenRequest = {
     code: req.query.code,
     scopes: ["user.read"], // Adjust the scope based on your requirements
-    redirectUri: "http://localhost:3000/", // Update this with your React app's redirect URI
+    redirectUri: "https://osoc-lost-and-found-webapp.netlify.app/", // Update this with your React app's redirect URI
   };
 
   try {

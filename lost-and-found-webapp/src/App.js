@@ -24,7 +24,7 @@ const msalConfig = {
   auth: {
     clientId: "0ab57f1a-6d44-4dfd-b784-55300e2d114b",
     authority: "https://login.microsoftonline.com/91cc1fb6-1275-4acf-b3ea-c213ec16257b",
-    redirectUri: "http://localhost:3000/", // Update this with your redirect URI
+    redirectUri: "https://osoc-lost-and-found-webapp.netlify.app/", // Update this with your redirect URI
   },
   cache: {
     cacheLocation: "localStorage",

@@ -12,7 +12,7 @@ export default function Login(props) {
   const handleLogin = async () => {
     try {
       await instance.loginPopup({
-        redirectUri: "http://localhost:3000/", // Update this with the correct redirect URI
+        redirectUri: "https://osoc-lost-and-found-webapp.netlify.app/", // Update this with the correct redirect URI
       });
 
       // After successful login, navigate to the home path
