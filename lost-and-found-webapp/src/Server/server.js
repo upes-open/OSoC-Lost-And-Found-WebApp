@@ -35,12 +35,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("/auth-callback", async (req, res) => {
-  const tokenRequest = {
-    code: req.query.code,
-    scopes: ["user.read"], // Adjust the scope based on your requirements
-    redirectUri: "https://osoc-lost-and-found-webapp.netlify.app/", // Update this with your React app's redirect URI
-  };
-
   try {
     const response = await pca.acquireTokenByCode(tokenRequest);
     console.log("Token acquired:", response.accessToken);
@@ -51,14 +45,8 @@ app.get("/auth-callback", async (req, res) => {
     res.status(500).send("Error during token acquisition.");
   }
 });
+
 ///////////////
-
-
-
-
-
-
-
 
 
 // Set up MongoDB connection
