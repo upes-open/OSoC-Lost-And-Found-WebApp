@@ -4,16 +4,21 @@ import { useNavigate } from 'react-router-dom';
 import "./category.css";
 import image from './bg.jpg'
 import dark from './dark.jpg';
+import books from './main-category/books.jpg';
+import devices from './main-category/devices.jpg';
+import cards from './main-category/cards.jpg';
+import others from './main-category/others.jpg';
+
 
 const CategorySelection = (props) => {
   const navigate = useNavigate();
   const [hoveredCategory, setHoveredCategory] = useState(null);
 
   const categories = [
-    { name: 'Cards',  subcategories: ['College ID Card', 'ATM Card', "Driver's License", 'Aadhar Card', 'Any Other Card'] },
-    { name: 'Books',  subcategories: ['Notebook', 'Book', 'Novel', 'Any Other Book'] },
-    { name: 'Electronic Devices', subcategories: ['Mobile Phone', 'Laptop', 'Smart Watch', 'Charger', 'Any Other Device'] },
-    { name: 'Others', subcategories: ['Bottle', 'Wallet', 'Bag', 'Any other Item'] },
+    { name: 'Cards', image: cards, subcategories: ['College ID Card', 'ATM Card', "Driver's License", 'Aadhar Card', 'Any Other Card'] },
+    { name: 'Books', image: books, subcategories: ['Notebook', 'Book', 'Novel', 'Any Other Book'] },
+    { name: 'Electronic Devices', image: devices, subcategories: ['Mobile Phone', 'Laptop', 'Smart Watch', 'Charger', 'Any Other Device'] },
+    { name: 'Others', image: others, subcategories: ['Bottle', 'Wallet', 'Bag', 'Any other Item'] },
   ];
 
   const handleSubcategorySelect = (subcategory) => {
