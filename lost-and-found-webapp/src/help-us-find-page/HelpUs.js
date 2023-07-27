@@ -12,7 +12,7 @@ const HelpUs = (props) => {
 
   const [fetched, setFetched] = useState(false);
   const [lostItems, setItems] = useState([]);
-  const host = "https://shiny-seal-loafers.cyclic.app";
+  const host = "https://lost-and-found.cyclic.app";
   const [spinner, setSpinner] = React.useState(true);
   // API call
   const url = `${host}/getLostItems`;

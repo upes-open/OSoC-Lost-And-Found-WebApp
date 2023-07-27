@@ -50,7 +50,7 @@ const FoundUpload = (props) => {
     formData.append('itemImage', itemImage);
 
     try {
-      await axios.post('https://shiny-seal-loafers.cyclic.app/api/submitFoundItem', formData, {
+      await axios.post('https://lost-and-found.cyclic.app/api/submitFoundItem', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
