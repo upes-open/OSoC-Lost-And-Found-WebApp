@@ -3,7 +3,7 @@ import './home.css';
 import image from './home1.png';
 import { Button } from '@mui/material';
 import { useMsal } from "@azure/msal-react";
-
+import { NavLink } from 'react-router-dom';
 const HomePage = (props) => {
   const { instance } = useMsal();
 
@@ -39,7 +39,17 @@ const HomePage = (props) => {
               <p className="ps-5 respo changing-text" style={{ fontSize: "1.7rem", fontWeight: "bold", marginLeft: "80px" }}>{text} </p>
               <p className="ps-5 mt-3" style={{ fontSize: "1rem" }}>We help you find lost items and reunite them with their owners. Whether you've lost something valuable or found an item that belongs to someone else, we've got you covered. For more info you can checkout </p>
               <div className="d-flex justify-content-center">
-                <Button href="/about" variant="contained" color="secondary" style={{ textTransform: "none", borderRadius: "20px", fontFamily: "'Poppins', sans-serif", fontSize: "1.1rem" }}>About Us</Button>
+              <NavLink to="/about" style={{ textDecoration: 'none' }}>
+              <Button variant="contained" color="secondary" style={{
+      textTransform: "none",
+      borderRadius: "20px",
+      fontFamily: "'Poppins', sans-serif",
+      fontSize: "1.1rem"
+    }}
+  >
+    About Us
+  </Button>
+</NavLink>
                 <Button  href="#" onClick={handleSignOut} variant="contained" color="secondary" style={{ marginLeft: "20px", textTransform: "none", borderRadius: "20px", fontFamily: "'Poppins', sans-serif", fontSize: "1.1rem" }}>Sign Out</Button>
               </div>
             </div>
