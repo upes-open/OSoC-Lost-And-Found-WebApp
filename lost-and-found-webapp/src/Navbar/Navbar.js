@@ -6,6 +6,10 @@ import './Navbar.css';
 import Switch from 'react-switch';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaTimes } from 'react-icons/fa';
+import user from './images/user.png'
+import email from './images/profile.png'
+import logout from './images/logout.png'
+import { useMsal } from "@azure/msal-react";
 
 const Navbar = (props) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -17,6 +21,18 @@ const Navbar = (props) => {
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleProfile = () => {
+    let subMenu = document.getElementById("sub-menu");
+    subMenu.classList.toggle("open-menu");
+  }
+
+  const { accounts, instance } = useMsal();
+  const userAccount = accounts[0];
+
+  const handleSignOut = () => {
+    instance.logout();
   };
 
   return (
@@ -111,7 +127,31 @@ const Navbar = (props) => {
                     Feedback
                   </NavLink>
                 </li>
+                {accounts.length > 0 &&
+                  (<li className={`menu-item ${props.theme === 'dark' ? 'dark-mode' : ''} ps-3`}>
+                    <img src={user} onClick={handleProfile} alt="user_image" className='user-pic' />
+                  </li>)}
               </ul>
+
+              {accounts.length > 0 &&
+                (<div className={`sub-menu-wrap ${props.theme === 'dark' ? 'dark-mode' : ''}`} id="sub-menu">
+                  <div className={`sub-menu ${props.theme === 'dark' ? 'dark-mode' : ''}`}>
+                    <div className={`user-info ${props.theme === 'dark' ? 'dark-mode' : ''}`}>
+                      <img src={user} alt="user_image" />
+                      <h5>{userAccount.name}</h5>
+                    </div>
+                    <hr />
+                    <div className={`sub-menu-item ${props.theme === 'dark' ? 'dark-mode' : ''}`}>
+                      <img src={email} alt="email" />
+                      <p style={{ fontSize: "14px", paddingTop: "16px", fontWeight:"400" }}>{userAccount.username}</p>
+                    </div>
+                    <div className={`sub-menu-item logout ${props.theme === 'dark' ? 'dark-mode' : ''}`}>
+                      <img src={logout} alt="logout" style={{cursor:"pointer"}}/>
+                      <p onClick={handleSignOut} style={{ fontSize: "14px", paddingTop: "16px",  fontWeight:"400" , cursor:"pointer"}}>Logout</p>
+                    </div>
+                  </div>
+                </div>)
+              }
             </nav>
           </div>
         </div>
