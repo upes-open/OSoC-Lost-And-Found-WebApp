@@ -42,7 +42,7 @@ It has been observed that when we misplace items on campus, we often find oursel
 ![Static Badge](https://img.shields.io/badge/NodeJS-101010?logo=nodedotjs&logoColor=%23339933) ![Static Badge](https://img.shields.io/badge/MongoDB-101010?logo=mongodb&logoColor=%2347A248) ![Static Badge](https://img.shields.io/badge/ReactJS-101010?logo=react&logoColor=%2361DAFB) ![Static Badge](https://img.shields.io/badge/Docker-101010?logo=docker&logoColor=%232496ED) ![Static Badge](https://img.shields.io/badge/Firebase-101010?logo=firebase&logoColor=%23FFCA28) ![Static Badge](https://img.shields.io/badge/Amazon%20S3-101010?logo=amazons3&logoColor=%23569A31)
 
 
-## Contributing
+## Contribution
 
 
 * Fork and Star the project.
